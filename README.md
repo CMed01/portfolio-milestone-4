@@ -1,110 +1,145 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# __Portfolio Project 4 - Full Stack__
+## __INSERT TITLE HERE__
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### __Demo__
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The live site can be viewed here - ["INSERT TITLE HERE"]()
 
-## Gitpod Reminders
+Github repository can be viewed here - [CMed01/portfolio-milestone-4](https://github.com/CMed01/portfolio-milestone-4/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Am I Responsive](./readme-assets/am-i-responsive.png)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Table of Contents
+* [User Experience](#user-experience)
+* [Technologies](#technologies)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-Another blue button should appear to click: _Open Browser_.
+## __User Experience__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### __Strategy__
 
-A blue button should appear to click: _Make Public_,
+#### __User Stories__
+* As a user I want to be able to:
 
-Another blue button should appear to click: _Open Browser_.
+* As a developer I want:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### __Scope__
 
-To log into the Heroku toolbelt CLI:
+### __Structure__
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### __Skeleton__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### __Surface (including Features)__
 
-------
+#### __Features__
+ 
+## __Technologies__
 
-## Release History
+### __Languages__
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* HTML
+* CSS
+* Javascript
+* Python
 
-**September 20 2023:** Update Python version to 3.9.17.
+### __Frameworks, programs and libraries__
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* [Django]() - Framework used to create full stack
+* [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
+* [Heroku](https://www.heroku.com/) - Used to deploy the website
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## __Testing__
+### __Validator testing__
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* __[W3C Markup Validation Service](https://validator.w3.org/)__
+    - Describe Test and Results
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<br>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* __[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)__
+    - Describe Test and Results
+    
+<br>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* __[JavaScript Testing (JSHint)](https://jshint.com/)__
+    - Describe Test and Results
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<br>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
+    - Describe Test and Results
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<br>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* __[CI Python Linter](https://pep8ci.herokuapp.com/)__
+    - Describe Test and Results
+    - ![CI Python Linter](./readme-assets/python-validation-test.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### __Browser Compatability__
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### __Test Cases and Results__
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<details open>
+<summary>The below table details the test cases that were used. </summary>
+<br>
 
-------
+- Insert table of tests here
 
-## FAQ about the uptime script
+</details>
 
-**Why have you added this script?**
+### __Debugging__
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+## __Deployment__
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### __How this site was deployed__
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+1. Open an account with Heroku.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+2. On the home dashboard of your account, select "New" then "Create new app".
 
-**So….?**
+3. Create an unique app name, select the region and click create.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+3. Click on the _Settings_ tab and add the following build packs:
+    * `heroku/python`
+    * `heroku/nodejs`
 
-**Can I opt out?**
+4. Create the following _Config Var_ called `PORT`. Set this to `8000`
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+5. Click on the _Deploy_ tab and connect with GitHub.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+6. Select the correct repository.
 
-**Anything more?**
+7. Chose between automatic deploy or manual deploy.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+8. Once successfully deployed you can visit the working website.
 
----
+### __How to clone the repository__
 
-Happy coding!
+1. Go to the 
+ repository on GitHub.
+
+2. Click the "Code" button to the right of the screen, click HTTPs and copy the link there.
+
+3. Open a GitBash terminal. 
+
+4. Change the working directory to the location where you want the clone directory.
+
+5. On the command line, type "git clone" then paste in the copied url (https://github.com/CMed01/portfolio-milestone-3) and press the Enter key to begin the clone process
+
+## __Credits__
+
+### __Content__
+
+* All content was written by the developer
+
+### __Code__
+
+* Insert any links to where code was adapted
+
+### __Acknowledegements__
