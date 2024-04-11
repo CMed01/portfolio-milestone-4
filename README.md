@@ -2,7 +2,7 @@
 ## __The Ox Box__
  __*“Strong body, strong mind, strong life”*__
 
-
+![The Ox Box](documentation/doc_images/the-ox-box-grey.jpg)
 ### __Demo__
 
 The live site can be viewed here - ["INSERT TITLE HERE"]()
