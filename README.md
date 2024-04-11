@@ -1,5 +1,6 @@
 # __Portfolio Project 4 - Full Stack__
-## __INSERT TITLE HERE__
+## __The Ox Box__
+ __*“Strong body, strong mind, strong life”*__
 
 
 ### __Demo__
@@ -20,22 +21,123 @@ Github repository can be viewed here - [CMed01/portfolio-milestone-4](https://gi
 
 ## __User Experience__
 
-### __Strategy__
+The Ox Box Project is designed to create a vibrant online community focused on holistic health and wellness. Users can review insightful blog content and register an account opening further opportunities to read, view and comment on both exercise routines and blog posts, fostering interaction and knowledge-sharing. Additionally, all users can directly reach out via a contact form, enabling individuals to seek personalised health advice from the owner. With dedicated sections for daily exercise workouts and a health and lifestyle blog, our website aims to empower users to embark on their journey towards a healthier and more fulfilling lifestyle.
 
-#### __User Stories__
-* As a user I want to be able to:
+### __User Stories__
+- US01: Navigate the site
+    - As a Site User I can view the landing page so that I can determine the purpose of the application
+        - Acceptance criteria
+            - I can access the home page and easily view the purpose of the site
+            - I can use the menu bar to navigate through the sites content
 
-* As a developer I want:
+- US02: Read about the site
+    - As a user, I can click on the About link so that I can read about the site.
+        - Acceptance criteria
+            - I can navigate to the about section of the website.
 
-### __Scope__
+- US03: View blog articles
+    - As a user, I can read health and lifestyle blog articles so that I can learn about improving my well-being
+        - Acceptance criteria
+            - I can navigate to the blog section of the website.
+            - I see a list of blog articles with titles and previews
 
-### __Structure__
+- US04: Reach out for personlaised services (contact form)
+    -  As a user, I can use the contact form to reach out for personalised health and lifestyle advice.
+        - Acceptance criteria
+            - I can navigate to the contact form section of the website.
+            - I see a form with fields to input my name, email, subject, and message.
+            - Upon submission, I receive a message successfully confirming form submission 
 
-### __Skeleton__
+- US05: Account registration
+    - As a new user, I can register for an account so that I can access the features of The Ox Box website.
+        - Acceptance criteria
+            - I can see a registration form with fields for my name, email, and password.
+            - Upon successful registration, I receive a message confirming my registration.
 
-### __Surface (including Features)__
+- US06: Account login
+    - As a registered user, I login into the website and access member content
+        - Acceptance criteria
+            - I can see a login form with fields for my email and password.
+            - Upon successful login, I am redirected to the homepage of The Ox Box website.
 
-#### __Features__
+- US07: Access registered user content
+    - As a registered user, after logging in, I can view exercise workouts of the day
+        - Acceptance criteria
+            - I can navigate to the workouts section of the website.
+            - I see a list of available workouts with details such as date, time, and description
+
+- US08: Create, update and delete comments on workouts
+    - As a registered user, I can read, review and delete comments on workouts so that I can share feedback or ask questions
+        - Acceptance criteria
+            - I can view the comment section below each workout.
+            - I can write a comment and submit it
+            - I can delete or update my own comment
+
+- US09: Create, update and delete comments on blog article
+    - As a registered user, I can read, review and delete comments on blog articles so that I can engage with the content
+        - Acceptance criteria
+            - I can view a comment section below each blog article.
+            - I can write a comment and submit it.
+            - I can delete or update my own comment
+
+- US10: Restrict access to register users 
+    - As a non-registered user, I have limited access to certain features.
+        - Acceptance criteria
+            - I can view blog articles only
+            - I cannot view or comment on blog articles
+            - I cannot access, view or comment on workouts
+
+- US11: Manage blog content
+    - As an admin, I can create, review and delete blog content and approve submitted comments.
+        - Acceptance criteria
+            - I have access to a backend dashboard where I can add new blog content.
+            - I can view pending comments and approve or reject them.
+
+- US12: Manage workout content
+    - As an admin, I have access to create, review and delete workout content and approve subitted comments.
+        - Acceptance criteria
+            - I can view and modify workout content.
+            - I can comment on blog articles and workouts.
+
+- US13: Review contact form submissions
+    - As a super admin, I can access and review form submissions full control and access.
+        - Acceptance criteria
+            - I can access all features of the website.
+            - I have exclusive access to review contact form submissions.
+
+- US14: Control access for all users
+    - As a super admin, I have full control and access to all content.
+        - Acceptance criteria
+            - I have superuser access for all features of the website.
+
+### __Features__
+
+#### __Current__
+- F01: Navbar
+- F02: Landing page/About page
+- F03: Contact Form
+    * Admin portal
+- F04: User authentication
+    * Registration
+    * Login
+    * Sign out
+    * Access control
+- F06: Blog/Workout articles
+    * Create
+- F07: Commenting
+    * Create
+    * Admin review
+    * Amend
+    * Delete
+- F08: UX messaging
+    * Successful POST requests
+
+#### __Future__
+- New gym facility for personal use
+- Online booking system for access to gym
+- Personal record of workout and tracking of performance.
+- Personalised dashboard for tracking activity
+- Registered user communication
  
 ## __Technologies__
 
