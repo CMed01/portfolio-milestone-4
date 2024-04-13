@@ -71,6 +71,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
         - Acceptance criteria
             - I can view the comment section below each workout.
             - I can write a comment and submit it
+            - I can record my score for the workout.
             - I can delete or update my own comment
 
 - US09: Create, update and delete comments on blog article
@@ -94,7 +95,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
             - I can view pending comments and approve or reject them.
 
 - US12: Manage workout content
-    - As an admin, I have access to create, review and delete workout content and approve subitted comments.
+    - As an admin, I have access to create, review and delete workout content and approve submitted comments.
         - Acceptance criteria
             - I can view and modify workout content.
             - I can comment on blog articles and workouts.
