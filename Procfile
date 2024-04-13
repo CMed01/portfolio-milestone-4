@@ -1,1 +1,1 @@
-web: gunicorn the-ox-box.wsgi
+web: gunicorn the_ox_box.wsgi
