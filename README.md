@@ -141,6 +141,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 - Registered user communication
  
 ## __Technologies__
+- [Neon](https://neon.tech/)
 
 ### __Languages__
 
@@ -196,6 +197,9 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 </details>
 
 ### __Debugging__
+- Merging Django with Neon
+    - [Connect a Django application to Neon](https://neon.tech/docs/guides/django)
+    - [Neon + Django Integration Example](https://community.neon.tech/t/neon-django-integration-example/411)
 
 
 ## __Deployment__
