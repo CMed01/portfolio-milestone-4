@@ -23,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cdq@$ffhmqjxos!fky8%+fj9-n80_9xv==w4t%#gc@g$4c%kdl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-cmed01-portfoliomilesto-fvpzypb9e6t.ws-eu110.gitpod.io'
+    '8000-cmed01-portfoliomilesto-fvpzypb9e6t.ws-eu110.gitpod.io',
+    '.herokuapp.com',
     ]
 
 
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'about',
 ]
 
 MIDDLEWARE = [
