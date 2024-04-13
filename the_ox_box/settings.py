@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-cmed01-portfoliomilesto-fvpzypb9e6t.ws-eu110.gitpod.io',
-    '.herokuapp.com',
+    '.herokuapp.com'
     ]
 
 
