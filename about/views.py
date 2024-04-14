@@ -1,17 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
 from .models import About, Header
 
 # Create your views here.
 
-def header_content(request):
+def index(request):
+    """
+    Renders landing page content for title
+    """
     header = Header.objects.all().order_by("updated_on").first()
-
-    return redner(
+    return render(
         request,
         "index.html",
         {
-            "title": title,
-            "sub_title": sub_title,
+            "header": header,
         },
     )

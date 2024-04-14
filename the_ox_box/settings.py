@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-cmed01-portfoliomilesto-fvpzypb9e6t.ws-eu110.gitpod.io',
@@ -100,6 +100,7 @@ if DATABASE_URL is not None:
 
 # This is a list of trusted origins for requests. Need to add both local and deployment URLS
 # Allowing you to add blog post content from the admin dashboard.
+
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io",
     "https://*.herokuapp.com"
