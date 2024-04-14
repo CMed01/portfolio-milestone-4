@@ -155,6 +155,15 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 * [Django]() - Framework used to create full stack
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
 * [Heroku](https://www.heroku.com/) - Used to deploy the website
+* [LucidChat]() - Entity relationship diagrams
+* [Figma]() - wireframes
+* [Neon]() - Database
+* [Favicon](https://favicon.io/) - Used to create favicon
+* [Font Awesome]()
+* [Bootstrap 5](https://getbootstrap.com/)
+* [Google Fonts](https://fonts.google.com/)
+    - Bebas Neue
+    - Inter
 
 ## __Testing__
 ### __Validator testing__
