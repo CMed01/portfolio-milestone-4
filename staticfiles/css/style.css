@@ -12,8 +12,27 @@ Use a unique and descriptive class name
 } */
 
 /* Navbar */
+.navbar {
+  background-color: #CFD0D0;
+}
+
+.navbar-brand {
+  color:black;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: black;
+  font-weight: 500;
+}
+
+
 .navtitle {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.contact-me-home {
+  background-color: #CFD0D0;
 }
