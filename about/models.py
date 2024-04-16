@@ -29,5 +29,8 @@ class About(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     profile_image = CloudinaryField('image', default='placeholder')
 
+    class Meta:
+        ordering = ["-updated_on"]
+
     def __str__(self):
         return self.title

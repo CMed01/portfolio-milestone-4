@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'about',
+    'blog',
 ]
 
 # Site ID needs to be added, so that Django can handle more than one site request
