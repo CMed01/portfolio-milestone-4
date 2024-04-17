@@ -153,6 +153,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 ### __Frameworks, programs and libraries__
 
 * [Django]() - Framework used to create full stack
+    * [AllAuth](https://docs.allauth.org/en/latest/) - use to provide authetication framework for project
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
 * [Heroku](https://www.heroku.com/) - Used to deploy the website
 * [LucidChat]() - Entity relationship diagrams
@@ -209,7 +210,8 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 - Merging Django with Neon
     - [Connect a Django application to Neon](https://neon.tech/docs/guides/django)
     - [Neon + Django Integration Example](https://community.neon.tech/t/neon-django-integration-example/411)
-
+- Creating url link for admin page for authorised users
+    - [Django](https://forum.djangoproject.com/t/cant-create-link-to-admin-page-in-my-template/12533) - "Can’t create link to admin page in my template"
 
 ## __Deployment__
 

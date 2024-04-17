@@ -1,6 +1,10 @@
 {% load static %}
 {% url 'home' as home_url %}
 {% url 'blog' as blog_url %}
+{% url 'admin' as admin_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -53,6 +57,28 @@
                         <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                     </li>
                     {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">My Profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Workout</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% else %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Account
@@ -66,18 +92,19 @@
                             </li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
-                                <a class="dropdown-item" href="#">Sign Out</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a>
                             </li>
                         </ul>
                     </li>
+                    {% endif %}
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page"
-                            href="#">Register</a>
+                            href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" 
-                            href="#">Login</a>
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 
