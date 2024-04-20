@@ -17,4 +17,27 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col-md-6 card mb-4  mt-3">
+            <h2>Comments</h2>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div class="p-2 mt-2" style="border: 1px dotted black">
+                    <h3>{{ comment.author }}</h3>
+                    <p>{{ comment.body }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 card mb-4 mt-3">
+            <div class="card-body">
+                <h2>Comment Edit section</h2>
+                <form action="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
