@@ -11,9 +11,4 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
-@admin.register(PostComment) 
-class PostCommentAdmin(SummernoteModelAdmin):
-    list_display = ('post', 'author', 'approved', 'created_on')
-    search_fields = ['post','body']
-    list_filter = ('author','approved','created_on')
-    summernote_fields = ('body',)
+admin.site.register(PostComment)

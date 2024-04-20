@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='blog'),
+    path('<slug:slug>/', views.post_detail, name='blog_detail'),
 ]

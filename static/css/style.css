@@ -36,3 +36,11 @@ Use a unique and descriptive class name
 .contact-me-home {
   background-color: #CFD0D0;
 }
+
+/* images */
+
+.scale {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
