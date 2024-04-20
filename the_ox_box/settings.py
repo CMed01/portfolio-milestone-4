@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'about',
     'blog',
     'workout',
+    'userprofile',
 ]
 
 # Site ID needs to be added, so that Django can handle more than one site request

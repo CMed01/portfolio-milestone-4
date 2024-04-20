@@ -5,6 +5,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'profile' as userprofile_url %}
 {% url 'workout' as workout_url %}
 
 <!DOCTYPE html>
@@ -64,7 +65,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="#">My Profile</a>
+                                <a class="dropdown-item" href="{% url 'workout' %}">My Profile</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{% url 'admin:index' %}" target="_blank">Admin</a>
