@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'about',
     'blog',
+    'workout',
 ]
 
 # Site ID needs to be added, so that Django can handle more than one site request

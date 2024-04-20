@@ -5,6 +5,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'workout' as workout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -69,7 +70,7 @@
                                 <a class="dropdown-item" href="{% url 'admin:index' %}" target="_blank">Admin</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Workout</a>
+                                <a class="dropdown-item" href="{% url 'workout' %}">Workout</a>
                             </li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
@@ -87,7 +88,7 @@
                                 <a class="dropdown-item" href="#">My Profile</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Workout</a>
+                                <a class="dropdown-item" href="{% url 'workout' %}">Workout</a>
                             </li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
