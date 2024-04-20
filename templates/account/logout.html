@@ -1,13 +1,25 @@
-{% extends "account/base_manage.html" %}
+{% extends "base.html" %}
+{% load static %}
+
 {% load allauth i18n %}
+
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
+
 {% block content %}
+<div class="row px-5 py-3">
+    <div class="col-md-12">
     {% element h1 %}
         {% trans "Sign Out" %}
     {% endelement %}
+
     <p>{% trans 'Are you sure you want to sign out?' %}</p>
+    </div>
+</div>
+
+<div class="row p-5">
+    <div class="col-md-12">
     {% url 'account_logout' as action_url %}
     {% element form method="post" action=action_url no_visible_fields=True %}
         {% slot body %}
@@ -24,4 +36,7 @@
             {% endelement %}
         {% endslot %}
     {% endelement %}
+    </div>
+</div>
+
 {% endblock content %}

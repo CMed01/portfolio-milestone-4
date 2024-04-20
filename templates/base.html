@@ -17,7 +17,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
     <!-- Font Awesome CSS -->
 
     <!-- Favicon -->
@@ -42,7 +41,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <div>
-                <img class="navbar-brand" src="../static/images/favicon/favicon-32x32.png" alt="favicon logo">
+                <img class="navbar-brand" src="{% static 'images/favicon/favicon-32x32.png' %}" alt="favicon logo">
             </div>
             <a class="navbar-brand" href="{% url 'home' %}">THE OX BOX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,7 +123,7 @@
     <div class="navbar navbar-expand-lg navbar-light">
         <footer class="container-fluid">
             <div class="col-md-4">
-                <img class="navbar-brand px-2" src="../static/images/favicon/favicon-32x32.png" alt="favicon logo">
+                <img class="navbar-brand px-2" src="{% static 'images/favicon/favicon-32x32.png' %}" alt="favicon logo">
                 <span class="text-body-secondary">© 2024 Company, Inc</span>
             </div>
       
