@@ -29,11 +29,16 @@
                     style="border: 1px dotted black">
                     <h3>{{ workoutcomment.author }}</h3>
                     <h5>Total Score: {{ workoutcomment.score_number }} reps</h5>
-                    <p>{{ workoutcomment.workout_comment }}</p>
-                </div>
-                {% if not workoutcomment.approved and workoutcomment.author == user %}
+                    <div id="workout_comment{{ workoutcomment.id }}">
+                        <p>{{ workoutcomment.workout_comment }}</p>
+                    </div>
+                    {% if not workoutcomment.approved and workoutcomment.author == user %}
                     <p class=""> You comment and score is waiting verification</p>
                     {% endif %}
+                    {% if user.is_authenticated and workoutcomment.author == user %}
+                    <button class="btn btn-delete" comment_id="{{ workoutcomment.id }}">Delete</button>
+                    {% endif %}
+                </div>
                 {% endfor %}
             </div>
         </div>
@@ -54,4 +59,31 @@
         </div>
     </div>
 </div>
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-heaader">
+                <h5 class="modal-title">
+                    Are you sure you want to delete?
+                </h5>
+                <button tyoe="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action cannot be undone
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Keep Comment</button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 {% endblock content %}
+
+{% block jsscript %}
+<script src="{% static 'js/workout_comments.js' %}"></script>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -72,3 +72,47 @@ def post_detail(request, slug):
             'blog_form': blog_form,
             },
     )
+
+def comment_edit(request, slug, comment_id):
+    """
+    View to edit blog comments
+    """
+    if request.method == "POST":
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        blog_comment = get_object_or_404(PostComment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            blog_comment = comment_form.save(commit=False)
+            blog_comment.post = post
+            blog_comment.approved = False
+            blog_comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated and awaiting approval')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+    
+    return HttpResponseRedirect(reverse('post_detail',args=[slug]))
+
+def comment_delete(request, slug, comment_id):
+    """
+    View to delete blog comments
+    """
+    queryset = Post.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    blog_comment = get_object_or_404(PostComment, pk=comment_id)
+    
+    if blog_comment.author == request.user:
+        blog_comment.delete()
+        messages.add_message(
+            request, 
+            messages.SUCCESS, 
+            "Comment deleted!"
+            )
+    else:
+        messages.add_message(
+            request, 
+            messages.ERROR, 
+            "You can only delete yout own comments!"
+            )
+    return HttpResponseRedirect(reverse('blog_detail',args=[slug]))

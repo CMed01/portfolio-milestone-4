@@ -29,10 +29,14 @@
                     style="border: 1px dotted black">
                     <h3>{{ comment.author }}</h3>
                     <div id="comment{{ comment.id }}">
-                        <p>{{ comment.body | linebreaks }}</p>
+                        <p>{{ comment.body }}</p>
                     </div>
                     {% if not comment.approved and comment.author == user %}
                     <p class=""> This comment is awaiting approval</p>
+                    {% endif %}
+                    {% if user.is_authenticated and comment.author == user %}
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -55,4 +59,31 @@
         </div>
     </div>
 </div>
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-heaader">
+                <h5 class="modal-title">
+                    Are you sure you want to delete?
+                </h5>
+                <button tyoe="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action cannot be undone
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Keep Comment</button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 {% endblock content %}
+
+{% block jsscript %}
+<script src="{% static 'js/blog_comments.js' %}"></script>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -73,3 +73,26 @@ def workout_detail(request, slug):
             "workout_form": workout_form,
             },
     )
+
+def workout_comment_delete(request, slug, comment_id):
+    """
+    View to delete blog comments
+    """
+    queryset = Workout.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    workout_comment = get_object_or_404(WorkoutComment, pk=comment_id)
+    
+    if workout_comment.author == request.user:
+        workout_comment.delete()
+        messages.add_message(
+            request, 
+            messages.SUCCESS, 
+            "Comment deleted!"
+            )
+    else:
+        messages.add_message(
+            request, 
+            messages.ERROR, 
+            "You can only delete yout own comments!"
+            )
+    return HttpResponseRedirect(reverse('workout_detail',args=[slug]))
