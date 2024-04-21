@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container"></div>
@@ -35,9 +36,17 @@
         </div>
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
-                <h2>Comment Edit section</h2>
-                <form action="">
+                {% if user.is_authenticated %}
+                <h2>Enter your score and comment here</h2>
+                <p> {{ user.username }}</p>
+                <form id ="workoutcommentForm" method="post">
+                    {{ workout_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit">Submit</button>
                 </form>
+                {% else %}
+                <p>Log in to leave a score</p>
+                {% endif %}
             </div>
         </div>
     </div>

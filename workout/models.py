@@ -26,7 +26,7 @@ class Workout(models.Model):
         return f"{self.title} | written by {self.author}"
 
 class WorkoutComment(models.Model):
-    title = models.ForeignKey(
+    post = models.ForeignKey(
         Workout, on_delete=models.CASCADE, related_name="workout_comments"
     )
     author = models.ForeignKey(

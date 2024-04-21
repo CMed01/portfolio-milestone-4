@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
 from .models import Workout, WorkoutComment
+from .forms import WorkoutcommentForm
 
 # Create your views here.
 
@@ -49,11 +50,22 @@ def workout_detail(request, slug):
 
     workoutcomments = workout.workout_comments.all().order_by("-created_on")
 
+    if request.method == "POST":
+        workout_form = WorkoutcommentForm(data=request.POST)
+        if workout_form.is_valid():
+            workout_post = workout_form.save(commit=False)
+            workout_post.author = request.user
+            workout_post.post = workout
+            workout_post.save()
+
+    workout_form = WorkoutcommentForm()
+
     return render(
         request,
         "workout_detail.html",
         {
             "workout": workout,
             "workoutcomments": workoutcomments,
+            "workout_form": workout_form,
             },
     )
