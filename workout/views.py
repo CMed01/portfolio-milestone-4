@@ -18,8 +18,42 @@ class WorkoutList(generic.ListView):
         
     **Template:**
 
-    :template:`blog/index.html`
+    :template:`workout/workout.html`
     """
     queryset = Workout.objects.filter(status=1).order_by("created_on")
     template_name = "workout.html"
     paginate_by = 6
+
+def workout_detail(request, slug):
+    """
+    Display an individual :model:`blog.Post`.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+    ``comments``
+        All approved comments related to the post.
+    ``comment_count``
+        A count of approved comments related to the post.
+    ``comment_form``
+        An instance of :form:`blog.CommentForm`
+
+    **Template:**
+
+    :template:`blog/post_detail.html`
+        """
+
+    queryset = Workout.objects.filter(status=1)
+    workout = get_object_or_404(queryset, slug=slug)
+
+    workoutcomments = workout.workout_comments.all().order_by("-created_on")
+
+    return render(
+        request,
+        "workout_detail.html",
+        {
+            "workout": workout,
+            "workoutcomments": workoutcomments,
+            },
+    )

@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Workout(models.Model):
-    wodtitle = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="workout_posts"
@@ -26,8 +26,8 @@ class Workout(models.Model):
         return f"{self.title} | written by {self.author}"
 
 class WorkoutComment(models.Model):
-    wodtitle = models.ForeignKey(
-        Workout, on_delete=models.CASCADE, related_name="score_entry"
+    title = models.ForeignKey(
+        Workout, on_delete=models.CASCADE, related_name="workout_comments"
     )
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="scorer"
@@ -41,7 +41,4 @@ class WorkoutComment(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        if score_in_time == True:
-            return f"Athlete score: {self.score_time} by {self.author}"
-        else:
-            return f"Athlete score: {self.score_number} by {self.author}"
+        return f"Athlete score: {self.score_number} reps by {self.author}"

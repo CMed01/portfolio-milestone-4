@@ -2,5 +2,45 @@
 {% load static %}
 
 {% block content %}
-<p>Workout page</p>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Welcome to the Workouts page</h2>
+        <p>Add some details her about what to find</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            {% for workout in workout_list %}
+            <div class="col-md-4">
+                <div>
+                    <div class="image-container">
+                        {% if "placeholder" in workout.featured_image.url %}
+                        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ workout.featured_image.url }}" alt="{{ workout.title }}">
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Author: {{ workout.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'workout_detail' workout.slug %}">
+                        <h2>{{ workout.title }}</h2>
+                    </a>
+                    <p>{{ workout.excerpt }}</p>
+                    <hr />
+                    <p class="card-text text-muted h6">{{ workout.created_on}}</p>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row"> 
+                <div class="col-12">
+                    <div class="row justify-content-around"> 
+            {% endif %}   
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
