@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Workout, WorkoutComment
 from .forms import WorkoutcommentForm
 
@@ -57,6 +58,9 @@ def workout_detail(request, slug):
             workout_post.author = request.user
             workout_post.post = workout
             workout_post.save()
+            messages.add_message(
+                request, messages.SUCCESS,'Score submitted and awaiting approval'
+                )
 
     workout_form = WorkoutcommentForm()
 

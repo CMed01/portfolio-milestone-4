@@ -56,6 +56,9 @@ def post_detail(request, slug):
             blog_comment.author = request.user
             blog_comment.post = post
             blog_comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,'Comment submitted and awaiting approval'
+                )
 
     blog_form = BlogcommentForm()
             
