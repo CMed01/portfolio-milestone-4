@@ -25,9 +25,15 @@
             <h2>Comments</h2>
             <div class="card-body">
                 {% for comment in comments %}
-                <div class="p-2 mt-2" style="border: 1px dotted black">
+                <div class="p-2 mt-2 {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}" 
+                    style="border: 1px dotted black">
                     <h3>{{ comment.author }}</h3>
-                    <p>{{ comment.body }}</p>
+                    <div id="comment{{ comment.id }}">
+                        <p>{{ comment.body | linebreaks }}</p>
+                    </div>
+                    {% if not comment.approved and comment.author == user %}
+                    <p class=""> This comment is awaiting approval</p>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

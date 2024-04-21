@@ -25,12 +25,15 @@
             <h2>Comments</h2>
             <div class="card-body">
                 {% for workoutcomment in workoutcomments %}
-                <div class="p-2 mt-2" style="border: 1px dotted black">
+                <div class="p-2 mt-2 {% if not workoutcomment.approved and workoutcomment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}" 
+                    style="border: 1px dotted black">
                     <h3>{{ workoutcomment.author }}</h3>
                     <h5>Total Score: {{ workoutcomment.score_number }} reps</h5>
                     <p>{{ workoutcomment.workout_comment }}</p>
-                    
                 </div>
+                {% if not workoutcomment.approved and workoutcomment.author == user %}
+                    <p class=""> You comment and score is waiting verification</p>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
