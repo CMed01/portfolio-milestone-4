@@ -2,5 +2,26 @@
 {% load static %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            {% if "placeholder" in profile.profile_image.url %}
+            <img class="scale" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
+            {% else %}
+            <img class="scale" src=" {{ profile.profile_image.url }}" alt="{{ post.title }}">
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-1">
+            <h2>Profile username:</h2>
+            <p>{{ user.username }}</p>
+            <h3>Biography: </h3>
+            <p>{{ profile.bio | safe }}</p>
+        </div>
+    </div>
+</div>
 <p>Profile page</p>
+{% endif %}
 {% endblock content %}

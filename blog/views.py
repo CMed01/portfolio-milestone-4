@@ -66,8 +66,8 @@ def post_detail(request, slug):
         request,
         "blog/post_detail.html",
         {
-            "post": post,
-            "comments": comments,
+            'post': post,
+            'comments': comments,
             'blog_form': blog_form,
             },
     )
