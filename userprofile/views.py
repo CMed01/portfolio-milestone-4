@@ -16,3 +16,16 @@ def view_profile(request):
             'profile': profile,
             },
     )
+
+# def edit_profile(request):
+#     profile = request.user.profile
+
+#     if request.method == 'POST':
+#         profile_form = ProfileForm(request.POST, instance=profile)
+#         if profile_form.is_valid():
+#             profile_form.save()
+#             return redirect('profile')
+#     else:
+#         form = ProfileForm(instance=profile)
+
+#     return render(request, 'edit_profile.html', {'form': form})   

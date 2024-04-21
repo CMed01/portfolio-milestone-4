@@ -212,6 +212,8 @@ The Ox Box Project is designed to create a vibrant online community focused on h
     - [Neon + Django Integration Example](https://community.neon.tech/t/neon-django-integration-example/411)
 - Creating url link for admin page for authorised users
     - [Django](https://forum.djangoproject.com/t/cant-create-link-to-admin-page-in-my-template/12533) - "Can’t create link to admin page in my template"
+- Using signal.py to automatically create a profile when a new user registers
+    - [Django signals](https://docs.djangoproject.com/en/5.0/topics/signals/)
 
 ## __Deployment__
 
