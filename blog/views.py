@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
 from .models import Post, PostComment
+from .forms import BlogcommentForm
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -48,11 +49,22 @@ def post_detail(request, slug):
 
     comments = post.comments.all().order_by("-created_on")
 
+    if request.method == "POST":
+        blog_form = BlogcommentForm(data=request.POST)
+        if blog_form.is_valid():
+            blog_comment = blog_form.save(commit=False)
+            blog_comment.author = request.user
+            blog_comment.post = post
+            blog_comment.save()
+
+    blog_form = BlogcommentForm()
+            
     return render(
         request,
         "blog/post_detail.html",
         {
             "post": post,
             "comments": comments,
+            'blog_form': blog_form,
             },
     )
