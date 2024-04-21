@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 {% if user.is_authenticated %}
@@ -15,13 +16,25 @@
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-1">
-            <h2>Profile username:</h2>
+            <h4>Profile username:</h4>
             <p>{{ user.username }}</p>
-            <h3>Biography: </h3>
-            <p>{{ profile.bio | safe }}</p>
+            <h5>Biography: </h5>
+            <div id="bio{{ profile.id }}">
+                <p>{{ profile.bio | safe }}</p>
+            </div>
         </div>
     </div>
 </div>
-<p>Profile page</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-1">
+            <form id ="profilecommentForm" method="post">
+                {{ profile_form | crispy }}
+                {% csrf_token %}
+                <button id="submitButton" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endif %}
 {% endblock content %}
