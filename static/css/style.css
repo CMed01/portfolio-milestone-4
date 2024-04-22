@@ -38,33 +38,25 @@ Use a unique and descriptive class name
 }
 
 /* elements */
-.title-hr{
+.title-hr {
   border: 2px solid black
 }
-.card-hr{
+.card-hr {
   border: 1px solid black
 }
 
 /* card */
-.card-sm{
+.card-sm {
   font-size: small;
 }
 
 /* images */
 
-.hero-image{
+.hero-image {
   background-image: url("/static/images/hero-image3.jpg");
+  background-size:cover;
   color: white;
-  max-height: 450px;
      }
-
-.img-container{
-  height:350px;
-}
-.index-img{
-  max-width: 80%;
-  max-height: 100%;
-}
 
 .scale {
   width: 100%;
