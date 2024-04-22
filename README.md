@@ -214,6 +214,8 @@ The Ox Box Project is designed to create a vibrant online community focused on h
     - [Django](https://forum.djangoproject.com/t/cant-create-link-to-admin-page-in-my-template/12533) - "Can’t create link to admin page in my template"
 - Using signal.py to automatically create a profile when a new user registers
     - [Django signals](https://docs.djangoproject.com/en/5.0/topics/signals/)
+- Adding access control using mixins
+    - [Django Mixins](https://docs.djangoproject.com/en/5.0/topics/auth/default/)
 
 ## __Deployment__
 
