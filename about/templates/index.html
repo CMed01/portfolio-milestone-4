@@ -3,30 +3,34 @@
 
 {% block content %}
 
-<section class="container-fluid my-5">
+<section class="container-fluid p-0">
     <div class="row justify-content-center">
-        <div class="col-md-11">
-            <h2>THE OX BOX</h2>
-            <p>Strong mind, Strong body, Strong life</p>
+        <div class="col-md-12">
+            <div class="text-center p-5 shadow-1-strong text-white hero-image">
+                <h1 class="mb-3 hero-title">THE OX BOX</h1>
+                <p style="font-style: italic;">"Strong mind, Strong body, Strong life"</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="container-fluid my-5">
+<section class="container-fluid mb-5">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <h2 class="d-flex justify-content-start">ABOUT ME PAGE</h2>
+        <div class="col-md-10 py-5">
+            <h2 class="d-flex justify-content-center">OUR MISSION</h2>
+            <hr class="title-hr">
         </div>
     </div>
     <div class="row">
         <div class="col-12 mt-3 left">
-            <div class="row justify-content-around">
+            <div class="row justify-content-center">
                 {% for about in about_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-5">
+                    <div class="card mb-4 text-center gray-bg">
                         <div class="card-body">
                             <h2 class="card-title">{{ about.title }}</p>
-                            <p class="card-text" style="font-size: small;">{{ about.content }}</p>
+                                <hr class="card-hr">
+                            <p class="card-text card-sm">{{ about.content }}</p>
                         </div>
                     </div>
                 </div>
@@ -34,26 +38,15 @@
             </div>
             <div class="row"> 
                 <div class="col-12 mt-3 left">
-                    <div class="row justify-content-around"> 
+                    <div class="row justify-content-center"> 
             {% endif %}   
             {% endfor %}
             </div>
         </div>
     </div>
-    
-
-        <!-- <div class="col-md-5">
-            <div class="d-flex justify-content-start my-2"> About me 1</div>
-            <div class="d-flex justify-content-start my-2"> About me 2</div>
-        </div>
-        <div class="col-md-5">
-            <div class="d-flex justify-content-start my-2"> About me 3</div>
-            <div class="d-flex justify-content-start my-2"> About me 4</div>
-        </div> -->
-
 </section>
 
-<section class="container-fluid py-5 contact-me-home">
+<section class="container-fluid py-5 gray-bg">
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="">
@@ -69,35 +62,43 @@
 
 <section class="container-fluid py-5">
     <div class="row justify-content-center">
-        <div class="col-md-5 align-self-center">
-            <div>
-                <img src="" alt="INSERT IMAGE HERE">
+        <div class="col-md-10">
+            <div class="card border-0">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/coach-blog2.jpg' %}" alt="personal trainer coaching client" class="card-img">
+                    </div>
+                
+                    <div class="col-md-6">
+                            <h2>The Ox Blog</h2>
+                            <hr class="title-hr">
+                            <p>Read articles from our industry leading staff, who are on hand to provide you with insightful advice to build a stronger you</p>
+                            <a class="btn btn-outline-primary" href="{% url 'blog' %}">View artilces</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5">
-            <div class="">
-                <h2>BLOG PAGES</h2>
-                <p>Click here to view more blogs</p>
-                <a class="btn btn-submit" href="{% url 'blog' %}">Blog page</a>
-            </div>
-        </div>
+        </div> 
     </div>
 </section>
 {% if user.is_authenticated %}
+
 <section class="container-fluid py-5">
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="">
-                <h2>WORKOUT PAGES</h2>
-                <p>Click here to view more blogs</p>
-                <a class="btn btn-submit" href="{% url 'workout' %}">workout page</a>
+        <div class="col-md-10">
+            <div class="card border-0">
+                <div class="row">
+                    <div class="col-md-6">
+                            <h2>Check out our workouts</h2>
+                            <hr class="title-hr">
+                            <p>Take on a new challenge and give one of our workouts a go. Log your score and check in with the community</p>
+                            <a class="btn btn-outline-primary" href="{% url 'workout' %}">View workouts</a>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'images/whiteboard.jpg' %}" alt="discussing a workout on a whiteboard" class="card-img">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5 align-self-center">
-            <div>
-                <img src="" alt="INSERT IMAGE HERE">
-            </div>
-        </div>
+        </div> 
     </div>
 </section>
 {% endif %}
