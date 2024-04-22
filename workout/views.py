@@ -2,12 +2,13 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Workout, WorkoutComment
 from .forms import WorkoutcommentForm
 
 # Create your views here.
 
-class WorkoutList(generic.ListView):
+class WorkoutList(LoginRequiredMixin,generic.ListView):
     """
     Returns all published posts in :model:`blog.Post`
     and displays them in a page of six posts. 
@@ -45,34 +46,39 @@ def workout_detail(request, slug):
 
     :template:`blog/post_detail.html`
         """
+    if request.user.is_authenticated:
+        queryset = Workout.objects.filter(status=1)
+        workout = get_object_or_404(queryset, slug=slug)
 
-    queryset = Workout.objects.filter(status=1)
-    workout = get_object_or_404(queryset, slug=slug)
+        workoutcomments = workout.workout_comments.all().order_by("-created_on")
 
-    workoutcomments = workout.workout_comments.all().order_by("-created_on")
+        if request.method == "POST":
+            workout_form = WorkoutcommentForm(data=request.POST)
+            if workout_form.is_valid():
+                workout_post = workout_form.save(commit=False)
+                workout_post.author = request.user
+                workout_post.post = workout
+                workout_post.save()
+                messages.add_message(
+                    request, messages.SUCCESS,'Score submitted and awaiting approval'
+                    )
 
-    if request.method == "POST":
-        workout_form = WorkoutcommentForm(data=request.POST)
-        if workout_form.is_valid():
-            workout_post = workout_form.save(commit=False)
-            workout_post.author = request.user
-            workout_post.post = workout
-            workout_post.save()
-            messages.add_message(
-                request, messages.SUCCESS,'Score submitted and awaiting approval'
-                )
+        workout_form = WorkoutcommentForm()
 
-    workout_form = WorkoutcommentForm()
-
-    return render(
-        request,
-        "workout_detail.html",
-        {
-            "workout": workout,
-            "workoutcomments": workoutcomments,
-            "workout_form": workout_form,
-            },
+        return render(
+            request,
+            "workout_detail.html",
+            {
+                "workout": workout,
+                "workoutcomments": workoutcomments,
+                "workout_form": workout_form,
+                },
     )
+    else:
+        return render (
+            request,
+            'account/signup.html',
+        )
 
 def workout_comment_delete(request, slug, comment_id):
     """
