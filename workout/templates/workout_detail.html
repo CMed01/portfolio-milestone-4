@@ -3,12 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container"></div>
-    <div class="row mx-5">
-        <div class="col-md-6">
-            <h2>{{ workout.title }}</h2>
-            <p>{{ workout.workout | safe }}</p>
-        </div>
+<article class="container-fluid">
+    <div class="row mx-2">
         <div class="col-md 4">
             {% if "placeholder" in workout.featured_image.url %}
             <img class="scale" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
@@ -16,24 +12,52 @@
             <img class="scale" src=" {{ workout.featured_image.url }}" alt="{{ post.title }}">
             {% endif %}
         </div>
+        <div class="col-md-6 mt-5 gray-bg border">
+            <h2>{{ workout.title }}</h2>
+            <p>{{ workout.workout | safe }}</p>
+        </div>
+        
     </div>
-</div>
+    <hr class="card-hr">
+</article>
 
 <div class="container">
-    <div class="row justify-content-around">
-        <div class="col-md-6 card mb-4  mt-3">
-            <h2>Comments</h2>
+    <div class="row justify-content-between">
+        <div class="col-md-4">
+            <h2>Enter your score and comment here</h2>
+        </div>
+        <div class="col-md-6">
+            <h2>Current scores</h2>
+        </div>
+        
+        <div class="col-md-4 card mb-4 mt-3">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <p><strong>Athlete:</strong> {{ user.username }}</p>
+                <p> {{ user.username }}</p>
+                <form id ="workoutcommentForm" method="post">
+                    {{ workout_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit">Submit</button>
+                </form>
+                <p class="text-muted small">*all comments and scores are subject to review</p>
+                {% else %}
+                <p>Log in to leave a score</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6 card my-4 card-comment">
             <div class="card-body">
                 {% for workoutcomment in workoutcomments %}
-                <div class="p-2 mt-2 {% if not workoutcomment.approved and workoutcomment.author == user %}faded{% elif not workoutcomment.approved %}d-none{% endif %}" 
-                    style="border: 1px dotted black">
+                <div class="card-border p-2 my-4 {% if not workoutcomment.approved and workoutcomment.author == user %}faded{% elif not workoutcomment.approved %}d-none{% endif %}">
                     <h3>{{ workoutcomment.author }}</h3>
+                    <hr>
                     <h5>Total Score: {{ workoutcomment.score_number }} reps</h5>
                     <div id="workout_comment{{ workoutcomment.id }}">
                         <p>{{ workoutcomment.workout_comment }}</p>
                     </div>
                     {% if not workoutcomment.approved and workoutcomment.author == user %}
-                    <p class=""> You comment and score is waiting verification</p>
+                    <p class="text-muted small"> You comment and score is waiting verification</p>
                     {% endif %}
                     {% if user.is_authenticated and workoutcomment.author == user %}
                     <button class="btn btn-delete" comment_id="{{ workoutcomment.id }}">Delete</button>
@@ -42,21 +66,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h2>Enter your score and comment here</h2>
-                <p> {{ user.username }}</p>
-                <form id ="workoutcommentForm" method="post">
-                    {{ workout_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit">Submit</button>
-                </form>
-                {% else %}
-                <p>Log in to leave a score</p>
-                {% endif %}
-            </div>
-        </div>
+        
     </div>
 </div>
 

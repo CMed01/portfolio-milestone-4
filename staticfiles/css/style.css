@@ -10,6 +10,27 @@ Use a unique and descriptive class name
   font-variation-settings:
     "slnt" 0;
 } */
+/* Body style */
+
+body {
+  max-width: 1500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+main {
+  background-color: #ecf0f0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.container-fluid {
+  width:90%;
+}
 
 /* Navbar */
 .navbar {
@@ -37,6 +58,10 @@ Use a unique and descriptive class name
   background-color: #CFD0D0;
 }
 
+.white-bg {
+  background-color: #FFFFFF;
+}
+
 /* elements */
 .title-hr {
   border: 2px solid black
@@ -50,11 +75,23 @@ Use a unique and descriptive class name
   font-size: small;
 }
 
-/* images */
+.card-comment {
+  overflow-y: scroll;
+  max-height:500px;
+}
 
+.card-edit {
+  max-height:500px
+}
+
+.card-border{
+  border: 1px dotted grey;
+}
+
+/* images */
 .hero-image {
   background-image: url("/static/images/hero-image3.jpg");
-  background-size:cover;
+  background-size:contain;
   color: white;
      }
 
@@ -62,4 +99,8 @@ Use a unique and descriptive class name
   width: 100%;
   height: auto;
   padding: 50px;
+}
+
+.img-blog {
+  max-height:280px;
 }
