@@ -16,9 +16,9 @@
         {% endelement %}
 
         <p>
-            {% blocktrans %}If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+            {% blocktrans %}If you have not created an account yet, then please sign up first.{% endblocktrans %}
         </p>
+        <p><a class="btn btn-outline-secondary btn-sm" href="{{ signup_url }}">Register</a></p>
     </div>
 </div>
 
@@ -38,9 +38,7 @@
                 {% endif %}
             {% endslot %}
             {% slot actions %}
-                {% element button type="submit" tags="prominent,login" %}
-                    {% trans "Sign In" %}
-                {% endelement %}
+                <button type="submit" class="btn btn-outline-dark btn-sm">Login</button>
             {% endslot %}
         {% endelement %}
         {% if SOCIALACCOUNT_ENABLED %}

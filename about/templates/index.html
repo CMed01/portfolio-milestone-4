@@ -48,15 +48,17 @@
 </section>
 
 <section class="container-fluid py-5 gray-bg">
-    <div class="row justify-content-center">
+    <div class="row justify-content-around">
         <div class="col-md-5">
             <div class="">
-                <h2>Contact Me</h2>
-                <p>Some information about what I can provide - sale info here</p>
+                <h2>Lets start a conversation</h2>
+                <hr>
+                <p>We have a selection of inspiring coaches on hand to support your journey to a stronger body, mind and life</p>
+                <p>If you are looking for personlaised advice - get in touch</p>
             </div>
         </div>
         <div class="col-md-5 align-self-center">
-            <button>Contact Me!</button>
+            <a href="#" class="btn btn-outline-dark">Contact Me!</a>
         </div>
     </div>
 </section>
@@ -73,8 +75,13 @@
                     <div class="col-md-6">
                             <h2>The Ox Blog</h2>
                             <hr class="title-hr">
-                            <p>Read articles from our industry leading staff, who are on hand to provide you with insightful advice to build a stronger you</p>
-                            <a class="btn btn-outline-primary" href="{% url 'blog' %}">View artilces</a>
+                            <p>
+                                Read articles from our industry leading staff, who are on hand to provide you with insightful advice to build a stronger you.
+                                <br>
+                                Whether you're seeking practical tips for healthier living or simply looking to expand your knowledge, 
+                                our blog is your go-to destination for holistic wellness inspiration.
+                            </p>
+                            <a class="btn btn-outline-dark" href="{% url 'blog' %}">View artilces</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +89,6 @@
     </div>
 </section>
 {% if user.is_authenticated %}
-
 <section class="container-fluid py-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -91,8 +97,34 @@
                     <div class="col-md-6">
                             <h2>Check out our workouts</h2>
                             <hr class="title-hr">
-                            <p>Take on a new challenge and give one of our workouts a go. Log your score and check in with the community</p>
-                            <a class="btn btn-outline-primary" href="{% url 'workout' %}">View workouts</a>
+                            <p>
+                                Step into our workouts page, where your fitness journey truly begins.
+                                Take on a new challenge and give one of our workouts a go. Log your score and check in with the community
+                            </p>
+                            <a class="btn btn-outline-dark" href="{% url 'workout' %}">View workouts</a>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{% static 'images/whiteboard.jpg' %}" alt="discussing a workout on a whiteboard" class="card-img">
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</section>
+{% else %}
+<section class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card border-2 py-4 mx-2">
+                <div class="row justify-content-around">
+                    <div class="col-md-6">
+                            <h2>Check out our workouts</h2>
+                            <hr class="title-hr">
+                            <p>
+                                Register an account and explore a curated selection of invigorating exercies designed to challenge and empower you, 
+                                whether you're a seasoned athlete or just starting out.
+                            </p>
+                            <a class="btn btn-outline-dark" href="{% url 'account_signup' %}">Register</a>
                     </div>
                     <div class="col-md-5">
                         <img src="{% static 'images/whiteboard.jpg' %}" alt="discussing a workout on a whiteboard" class="card-img">

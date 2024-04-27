@@ -14,11 +14,11 @@
             {% trans "Sign Up" %}
         {% endelement %}
         <p>
-            {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+            {% blocktrans %}Already have an account? Then please sign in.{% endblocktrans %}
         </p>
+        <p><a class="btn btn-outline-secondary btn-sm" href="{{ login_url }}">Login</a></p>
     </div>
 </div>
-
 <div class="row p-5">
     <div class="col-md-12">
         {% url 'account_signup' as action_url %}
@@ -34,9 +34,7 @@
                 {% endif %}
             {% endslot %}
             {% slot actions %}
-                {% element button tags="prominent,signup" type="submit" %}
-                    {% trans "Sign Up" %}
-                {% endelement %}
+                <button type="submit" class="btn btn-outline-dark btn-sm">Sign Up</button>
             {% endslot %}
         {% endelement %}
         {% if SOCIALACCOUNT_ENABLED %}
