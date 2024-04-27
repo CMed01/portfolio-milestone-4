@@ -23,7 +23,7 @@
                         <div class="card-body mb-4">
                             <div class="image-container">
                                 {% if "placeholder" in workout.featured_image.url %}
-                                <img class="card-img-top img-blog" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                                <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top img-blog" src=" {{ workout.featured_image.url }}" alt="{{ workout.title }}">
                                 {% endif %}
@@ -48,5 +48,26 @@
             </div>
         </div>
     </div>
+
+    {% if is_paginated %}
+    <nav aria-label="Page navigation pb-3" class="py-2">
+        <ul class="pagination justify-content-center">
+            <li>
+                <a href="{% if page_obj.has_previous %} ?page={{ page_obj.previous_page_number }} {% endif %}" 
+                class="{% if page_obj.has_previous %} btn btn-outline-dark btn-sm {% else %} d-none {% endif %} ">
+                &laquo; PREV
+                </a>
+            </li>
+            <li class="px-3 mt-1">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</li>
+            <li>
+                <a href="{% if page_obj.has_next %} ?page={{ page_obj.next_page_number }} {% endif %}" 
+                class="{% if page_obj.has_next %} btn btn-outline-dark btn-sm {% else %} d-none {% endif %}">
+                NEXT &raquo;
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+
 </div>
 {% endblock content %}

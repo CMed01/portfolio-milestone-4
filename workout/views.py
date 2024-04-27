@@ -23,7 +23,7 @@ class WorkoutList(LoginRequiredMixin,generic.ListView):
 
     :template:`workout/workout.html`
     """
-    queryset = Workout.objects.filter(status=1).order_by("created_on")
+    queryset = Workout.objects.filter(status=1).order_by("-created_on")
     template_name = "workout.html"
     paginate_by = 6
 

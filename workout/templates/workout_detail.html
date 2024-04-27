@@ -34,7 +34,6 @@
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <p><strong>Athlete:</strong> {{ user.username }}</p>
-                <p> {{ user.username }}</p>
                 <form id ="workoutcommentForm" method="post">
                     {{ workout_form | crispy }}
                     {% csrf_token %}

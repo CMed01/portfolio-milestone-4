@@ -21,7 +21,7 @@ class PostList(generic.ListView):
 
     :template:`blog/index.html`
     """
-    queryset = Post.objects.filter(status=1).order_by("created_on")
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog/post.html"
     paginate_by = 6
 

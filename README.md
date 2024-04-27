@@ -162,9 +162,13 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 * [Favicon](https://favicon.io/) - Used to create favicon
 * [Font Awesome]()
 * [Bootstrap 5](https://getbootstrap.com/)
+    * [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
+* [Pexels](https://www.pexels.com/) - Used for stock copyright free images
 * [Google Fonts](https://fonts.google.com/)
     - Bebas Neue
     - Inter
+* [ChatGPT](https://chat.openai.com/) - used to create the test blogs.
+* [WodWell](https://wodwell.com/) - used to create the library of workouts
 
 ## __Testing__
 ### __Validator testing__
