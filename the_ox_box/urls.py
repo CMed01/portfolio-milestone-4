@@ -26,3 +26,10 @@ urlpatterns = [
     path('workout/', include("workout.urls"), name='workout-urls'),
     path('', include("about.urls"), name='about-urls'),
 ]
+
+# Error handler, custom page views
+handler400 = 'about.views.custom_400'
+handler403 = 'about.views.custom_403'
+handler404 = 'about.views.custom_404'
+
+
