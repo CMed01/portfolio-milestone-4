@@ -25,28 +25,28 @@
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-md-6">
-            <h2>Comments</h2>
+            <h3>Comments</h3>
         </div>
         <div class="col-md-4">
-            <h2>Add Comment</h2>
+            <h3>Add Comment</h3>
         </div>
     </div>
     <div class="row justify-content-between">
         <div class="col-md-6 card my-4 card-comment">
             <div class="card-body">
                 {% for comment in comments %}
-                <div class="card-border p-2 my-4 {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}">
-                    <h3>{{ comment.author }}</h3>
+                <div class="card-border p-2 my-4 comment-gray-bg {% if not comment.approved and comment.author == user %}white-bg{% elif not comment.approved %}d-none{% endif %}">
+                    <h4>{{ comment.author }}</h4>
                     <hr>
                     <div id="comment{{ comment.id }}">
                         <p>{{ comment.body }}</p>
                     </div>
                     {% if not comment.approved and comment.author == user %}
-                    <p class="text-muted small"> This comment is awaiting approval</p>
+                    <p class="text-muted small"><em>*Your comment is awaiting approval</em></p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-outline-secondary btn-sm btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                    <button class="btn btn-outline-danger btn-sm btn-delete" comment_id="{{ comment.id }}">Delete</button>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -59,11 +59,13 @@
                 <form id ="blogcommentForm" method="post">
                     {{ blog_form | crispy }}
                     {% csrf_token %}
-                    <button id="submitButton" type="submit">Post Comment</button>
+                    <button id="submitButton" type="submit" 
+                        class="btn btn-outline-secondary btn-sm">Post Comment</button>
                 </form>
                 <p class="text-muted small">*all comments subject to review</p>
                 {% else %}
-                <p>Log in to leave a commment</p>
+                <p>Log in to leave a comment</p>
+                <a class="btn btn-outline-dark btn-sm" href="{% url 'account_login' %}">Login</a>
                 {% endif %}
             </div>
         </div>

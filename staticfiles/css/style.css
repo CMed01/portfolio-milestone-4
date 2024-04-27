@@ -27,7 +27,6 @@ a {
   color: black;
 }
 
-
 .container-fluid {
   width:90%;
 }
@@ -56,6 +55,10 @@ a {
 
 .gray-bg {
   background-color: #CFD0D0;
+}
+
+.comment-gray-bg {
+  background-color: #f7f7f7;
 }
 
 .white-bg {

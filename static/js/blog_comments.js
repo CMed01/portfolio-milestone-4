@@ -16,7 +16,7 @@ for (let button of editButtons) {
         let commentContent = document.getElementById(`comment${commentId}`).innerText;
         blogCommentText.value = commentContent;
         submitButton.innerText = "Update";
-        commentForm.setAttribute("action", `edit_comment/${commentId}`);
+        blogCommentForm.setAttribute("action", `edit_comment/${commentId}`);
     })
 }
 

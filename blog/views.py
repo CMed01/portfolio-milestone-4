@@ -77,13 +77,14 @@ def comment_edit(request, slug, comment_id):
     """
     View to edit blog comments
     """
+
     if request.method == "POST":
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         blog_comment = get_object_or_404(PostComment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
+        comment_form = BlogcommentForm(data=request.POST, instance=blog_comment)
 
-        if comment_form.is_valid() and comment.author == request.user:
+        if comment_form.is_valid() and blog_comment.author == request.user:
             blog_comment = comment_form.save(commit=False)
             blog_comment.post = post
             blog_comment.approved = False
@@ -92,7 +93,7 @@ def comment_edit(request, slug, comment_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
     
-    return HttpResponseRedirect(reverse('post_detail',args=[slug]))
+    return HttpResponseRedirect(reverse('blog_detail',args=[slug]))
 
 def comment_delete(request, slug, comment_id):
     """
