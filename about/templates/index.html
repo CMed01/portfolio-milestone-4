@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <section class="container-fluid p-0 bg-image hero-image" style="height:350px;">
@@ -146,11 +147,12 @@
                 </h5>
             </div>
             <div class="modal-body">
-                This action cannot be undone
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Close</button>
-                <a id="contactConfirm" href="#" class="btn btn-outline-success btn-sm">Contact</a>
+                <form id="contactForm" method="post">
+                    {{ contact_form | crispy }}
+                    {% csrf_token %}
+                    <a class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Close</a>
+                    <button id="contactConfirm" type="submit" class="btn btn-outline-success btn-sm">Contact</a>
+                </form>
             </div>
         </div>
     </div>
