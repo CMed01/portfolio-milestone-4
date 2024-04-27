@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="col-md-5 align-self-center">
-            <a href="#" class="btn btn-outline-dark">Contact Me!</a>
+            <button type="submit" id="contact-me" class="btn btn-outline-dark contact-me">Contact Me!</button>
         </div>
     </div>
 </section>
@@ -136,4 +136,29 @@
 </section>
 {% endif %}
 
+<!-- Contact form modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                   Great News! Complete the form below and we'll get in touch!
+                </h5>
+            </div>
+            <div class="modal-body">
+                This action cannot be undone
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <a id="contactConfirm" href="#" class="btn btn-outline-success btn-sm">Contact</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block jsscript %}
+<script src="{% static 'js/index_contact.js' %}"></script>
 {% endblock %}

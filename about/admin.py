@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import About, Header
+from .models import About, ContactRequest
 
 # Register your models here.
 @admin.register(About)
@@ -10,4 +10,4 @@ class AboutAdmin(SummernoteModelAdmin):
     list_filter = ('updated_on','status')
     summernote_fields = ('content',)
 
-admin.site.register(Header)
+admin.site.register(ContactRequest)

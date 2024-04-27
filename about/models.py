@@ -6,18 +6,6 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class Header(models.Model):
-    """
-    Stores a title and sub title for the landing page
-    This is editable
-    """
-    title = models.CharField(max_length=200, unique=True)
-    sub_title = models.TextField()
-    created_on = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
 class About(models.Model):
     """
     Stores content for display on the landing page that provides the user information 
@@ -34,3 +22,16 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+class ContactRequest(models.Model):
+    """
+    Stores content for display on the landing page that provides the user information 
+    about the owner and purpose of websote.
+    """
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    message = models.TextField()
+    read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Collaboration request from {self.name}"
