@@ -51,6 +51,11 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
 
     if request.method == "POST":
+        if not request.user.is_authenticated:
+            messages.add_message.ERROR, 'You need to be registered to submit a comment'
+            HttpResponseRedirect(reverse('blog_detail',args=[slug]))
+        
+        
         blog_form = BlogcommentForm(data=request.POST)
         if blog_form.is_valid():
             blog_comment = blog_form.save(commit=False)
