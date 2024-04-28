@@ -28,8 +28,8 @@ urlpatterns = [
 ]
 
 # Error handler, custom page views
-handler400 = 'about.views.custom_400'
-handler403 = 'about.views.custom_403'
-handler404 = 'about.views.custom_404'
+handler400 = 'the_ox_box.views.custom_400'
+handler403 = 'the_ox_box.views.custom_403'
+handler404 = 'the_ox_box.views.custom_404'
 
 
