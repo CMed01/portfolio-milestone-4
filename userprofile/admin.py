@@ -7,6 +7,7 @@ from .models import Profile
 
 
 class ProfileAdmin(SummernoteModelAdmin):
+    """Adds summernote functionaility to Profile modal"""
     list_display = ('author', 'slug', 'profile_image', 'created_on',)
     search_fields = ['author',]
     list_filter = ('updated_on', 'created_on',)

@@ -6,7 +6,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Workout(models.Model):
-    """
+    """Create Workout Modal
+    
+    Stores a user profile data related to :model:`auth.User`.
     """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -28,7 +30,10 @@ class Workout(models.Model):
 
 
 class WorkoutComment(models.Model):
-    """
+    """Create WorkoutComment Modal
+    
+    Stores comment post entries related to :model:`auth.User`
+    and :modal :workout.Workout
     """
     post = models.ForeignKey(
         Workout, on_delete=models.CASCADE, related_name="workout_comments"

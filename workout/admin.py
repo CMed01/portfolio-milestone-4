@@ -4,7 +4,8 @@ from .models import Workout, WorkoutComment
 
 
 @admin.register(Workout)
-class PostAdmin(SummernoteModelAdmin):
+class WorkoutAdmin(SummernoteModelAdmin):
+    """Adds summernote functionaility to Workout modal"""
     list_display = ('title', 'slug', 'status', 'created_on',)
     search_fields = ['title', 'content',]
     list_filter = ('status', 'created_on',)

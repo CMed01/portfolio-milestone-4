@@ -5,6 +5,7 @@ from .models import About, ContactRequest
 
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
+    """Adds summernote functionaility to admin modal"""
     list_display = ('title', 'updated_on',)
     search_fields = ['title', 'content',]
     list_filter = ('updated_on', 'status',)

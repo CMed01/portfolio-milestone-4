@@ -7,9 +7,11 @@ from .forms import BlogcommentForm
 
 
 class PostList(generic.ListView):
-    """
-    Returns all published posts in :model:`blog.Post`
+    """Create Posts View
+
+    Returns all published blog posts in :model:`blog.Post`
     and displays them in a page of six posts. 
+    
     **Context**
 
     ``queryset``
@@ -19,7 +21,7 @@ class PostList(generic.ListView):
         
     **Template:**
 
-    :template:`blog/index.html`
+    :template:`blog/post.html`
     """
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog/post.html"
@@ -27,8 +29,7 @@ class PostList(generic.ListView):
 
 
 def post_detail(request, slug):
-    """
-    Display an individual :model:`blog.Post`.
+    """Display an individual :model:`blog.Post`.
 
     **Context**
 
@@ -36,15 +37,13 @@ def post_detail(request, slug):
         An instance of :model:`blog.Post`.
     ``comments``
         All approved comments related to the post.
-    ``comment_count``
-        A count of approved comments related to the post.
-    ``comment_form``
-        An instance of :form:`blog.CommentForm`
+    ``blog_form``
+        An instance of :form:`blog.BlogcommentForm`
 
     **Template:**
 
     :template:`blog/post_detail.html`
-        """
+    """
 
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -81,10 +80,17 @@ def post_detail(request, slug):
 
 
 def comment_edit(request, slug, comment_id):
-    """
-    View to edit blog comments
-    """
+    """Display an individual comment for edit.
 
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+    ``blog_comment``
+        A single comment related to the post.
+    ``comment_form``
+        An instance of :form:`blog.BlogcommentForm`
+    """
     if request.method == "POST":
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -104,9 +110,16 @@ def comment_edit(request, slug, comment_id):
 
 
 def comment_delete(request, slug, comment_id):
+    """Delete an individual comment.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+    ``blog_comment``
+        A single comment related to the post.
     """
-    View to delete blog comments
-    """
+        
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     blog_comment = get_object_or_404(PostComment, pk=comment_id)

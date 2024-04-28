@@ -9,13 +9,15 @@ from .forms import WorkoutcommentForm
 
 
 class WorkoutList(LoginRequiredMixin,generic.ListView):
-    """
-    Returns all published posts in :model:`blog.Post`
+    """Create Workout View
+
+    Returns all published workout posts in :model:`workout.Workouts`
     and displays them in a page of six posts. 
+
     **Context**
 
     ``queryset``
-        All published instances of :model:`blog.Post`
+        All published instances of :model:`workout.Workout`
     ``paginate_by``
         Number of posts per page.
         
@@ -30,24 +32,21 @@ class WorkoutList(LoginRequiredMixin,generic.ListView):
 
 @login_required
 def workout_detail(request, slug):
-    """
-    Display an individual :model:`blog.Post`.
+    """Display an individual :model:`workout.Workout`.
 
     **Context**
 
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comments``
-        All approved comments related to the post.
-    ``comment_count``
-        A count of approved comments related to the post.
-    ``comment_form``
-        An instance of :form:`blog.CommentForm`
+    ``workout``
+        An instance of :model:`workout.Workout`.
+    ``workoutcomments``
+        All approved comments related to the workout.
+    ``workout_form``
+        An instance of :form:`workout.WorkoutcommentForm`
 
     **Template:**
 
-    :template:`blog/post_detail.html`
-        """
+    :template:`workout/workout_detail.html`
+    """
     if request.user.is_authenticated:
         queryset = Workout.objects.filter(status=1)
         workout = get_object_or_404(queryset, slug=slug)
@@ -85,8 +84,14 @@ def workout_detail(request, slug):
 
 @login_required
 def workout_comment_delete(request, slug, comment_id):
-    """
-    View to delete blog comments
+    """Delete an individual comment.
+
+    **Context**
+
+    ``workout``
+        An instance of :model:`workout.Workout`.
+    ``workout_comment``
+        A single comment related to the post.
     """
     queryset = Workout.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)

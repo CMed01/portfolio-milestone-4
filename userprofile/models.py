@@ -5,7 +5,9 @@ from workout.models import Workout, WorkoutComment
 
 
 class Profile(models.Model):
-    """
+    """Create Profile Modal
+    
+    Stores a user profile data related to :model:`auth.User`.
     """
     author = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)

@@ -6,9 +6,10 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class About(models.Model):
-    """
-    Stores content for display on the landing page that provides the user information 
-    about the owner and purpose of websote.
+    """Create PostComment Modal
+
+    Stores 'About' content for display on the landing page that provides the user information 
+    about the owner and purpose of website.
     """
     title = models.CharField(max_length=200, unique=True)
     content = models.TextField()
@@ -24,9 +25,10 @@ class About(models.Model):
 
 
 class ContactRequest(models.Model):
-    """
-    Stores content for display on the landing page that provides the user information 
-    about the owner and purpose of websote.
+    """Create CommentRequest Modal
+    
+    Stores inputted data by the user submited via the 
+    ContactForm()
     """
     name = models.CharField(max_length=200)
     email = models.EmailField()
