@@ -100,7 +100,7 @@ def comment_edit(request, slug, comment_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
     
-    return HttpResponseRedirect(reverse('blog_detail',args=[slug]))
+    return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):
@@ -124,5 +124,5 @@ def comment_delete(request, slug, comment_id):
             messages.ERROR, 
             "You can only delete yout own comments!"
             )
-    return HttpResponseRedirect(reverse('blog_detail',args=[slug]))
+    return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
     

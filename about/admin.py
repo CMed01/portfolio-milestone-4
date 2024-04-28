@@ -5,9 +5,9 @@ from .models import About, ContactRequest
 
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
-    list_display = ('title', 'updated_on')
-    search_fields = ['title', 'content']
-    list_filter = ('updated_on','status')
+    list_display = ('title', 'updated_on',)
+    search_fields = ['title', 'content',]
+    list_filter = ('updated_on', 'status',)
     summernote_fields = ('content',)
 
 

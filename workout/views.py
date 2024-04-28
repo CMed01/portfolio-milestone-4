@@ -62,7 +62,7 @@ def workout_detail(request, slug):
                 workout_post.post = workout
                 workout_post.save()
                 messages.add_message(
-                    request, messages.SUCCESS,'Score submitted and awaiting approval'
+                    request, messages.SUCCESS, 'Score submitted and awaiting approval'
                     )
 
         workout_form = WorkoutcommentForm()
