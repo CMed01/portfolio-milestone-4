@@ -85,6 +85,12 @@ a {
   color: white;
 }
 
+.scale {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+
 .img-blog {
   max-height: 280px;
 }

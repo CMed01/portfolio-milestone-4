@@ -7,8 +7,7 @@ from .models import Profile
 @receiver(post_save, sender=User)
 
 def create_profile(sender, instance, created, **kwargs):
-    """
-    """
+    """Create profile when new user registers"""
     if created:
         Profile.objects.create(author=instance)
         

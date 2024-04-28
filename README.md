@@ -112,6 +112,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
             - I have superuser access for all features of the website.
 
 ### __Features__
+- [Wireframes](https://github.com/CMed01/portfolio-milestone-4/blob/main/documentation/wireframes/wirefranes-figma.pdf) - designed using [Figma](https://www.figma.com/)
 
 #### __Current__
 - F01: Navbar

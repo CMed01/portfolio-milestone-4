@@ -12,3 +12,4 @@ class ProfileAdmin(SummernoteModelAdmin):
     search_fields = ['author',]
     list_filter = ('updated_on', 'created_on',)
     prepopulated_fields = {'slug': ('author',)}
+    summernote_fields = ('bio',)    

@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.view_profile, name='profile'),
-    path('profile/<int:bio_id>',
+    path('<slug:slug>',
          views.edit_profile, name='profile_edit'),
 ]

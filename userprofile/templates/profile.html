@@ -6,27 +6,34 @@
 {% if user.is_authenticated %}
 <section class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            {% if "placeholder" in profile.profile_image.url %}
-            <img class="scale" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
-            {% else %}
-            <img class="scale" src=" {{ profile.profile_image.url }}" alt="{{ post.title }}">
-            {% endif %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 offset-md-1">
-            <h4>Profile username:</h4>
-            <p>{{ user.username }}</p>
-            <h5>Biography: </h5>
-            <div id="bio{{ profile.id }}">
-                <p>{{ profile.bio | safe }}</p>
+        <div class="col-md-12">
+            <div class="row my-4">
+                <div class="col-md-4 offset-md-1">
+                    {% if "placeholder" in profile.profile_image.url %}
+                    <img class="img-fluid" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
+                    {% else %}
+                    <img class="img-fluid rounded" style="height:400px;" src=" {{ profile.profile_image.url }}" alt="{{ post.title }}">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h4>Profile username:</h4>
+                    <p>{{ user.username }}</p>
+                    <h5>Biography: </h5>
+                    <div id="bio{{ profile.id }}">
+                        <p>{{ profile.bio | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-md-2 offset-md-10">
+                    <a href="{% url 'profile_edit' profile.slug %}">Edit Profile</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container">
+<section class="container d-none">
     <div class="row">
         <div class="col-md-8 offset-md-1">
             <form id ="profilecommentForm" method="post">
