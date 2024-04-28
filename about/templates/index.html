@@ -41,9 +41,9 @@
                 </div>
                 {% if forloop.counter|divisibleby:2 %}
             </div>
-            <div class="row"> 
-                <div class="col-12 mt-3 left">
-                    <div class="row justify-content-center"> 
+    <div class="row"> 
+        <div class="col-12 mt-3 left"> 
+            <div class="row justify-content-center">
             {% endif %}   
             {% endfor %}
             </div>
@@ -54,15 +54,13 @@
 <section class="container-fluid py-5 gray-bg">
     <div class="row justify-content-around">
         <div class="col-md-5">
-            <div class="">
-                <h2>Lets start a conversation</h2>
-                <hr>
-                <p>
-                    We have a selection of inspiring coaches on hand to support your 
-                    journey to a stronger body, mind and life
-                </p>
-                <p>If you are looking for personlaised advice - get in touch</p>
-            </div>
+            <h2>Lets start a conversation</h2>
+            <hr>
+            <p>
+                We have a selection of inspiring coaches on hand to support your 
+                journey to a stronger body, mind and life
+            </p>
+            <p>If you are looking for personlaised advice - get in touch</p>
         </div>
         <div class="col-md-5 align-self-center">
             <button type="submit" id="contact-me" class="btn btn-outline-dark contact-me">
@@ -156,7 +154,7 @@
     <div class="modal-dialog">
         <div class="modal-content p-3">
             <div class="modal-header">
-                <h5 class="modal-title">
+                <h5 class="modal-title" id="contactModalLabel">
                    Great News! Complete the form below and we'll get in touch!
                 </h5>
             </div>
