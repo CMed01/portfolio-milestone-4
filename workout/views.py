@@ -3,6 +3,7 @@ from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .models import Workout, WorkoutComment
 from .forms import WorkoutcommentForm
 
@@ -27,6 +28,7 @@ class WorkoutList(LoginRequiredMixin,generic.ListView):
     template_name = "workout.html"
     paginate_by = 6
 
+@login_required
 def workout_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
@@ -80,6 +82,7 @@ def workout_detail(request, slug):
             'account/signup.html',
         )
 
+@login_required
 def workout_comment_delete(request, slug, comment_id):
     """
     View to delete blog comments

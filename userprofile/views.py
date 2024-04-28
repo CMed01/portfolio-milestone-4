@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Profile, User
 from .forms import ProfileForm
 from django.contrib import messages
 
 # Create your views here.
 
+@login_required
 def view_profile(request):
 
     queryset = Profile.objects.all()
@@ -21,6 +23,7 @@ def view_profile(request):
             },
     )
 
+@login_required
 def edit_profile(request):
     profile = request.user.profile
 
