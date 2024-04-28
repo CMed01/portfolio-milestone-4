@@ -2,26 +2,28 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!-- Main body content -->
 {% block content %}
 <article class="container-fluid">
     <div class="row mx-2">
         <div class="col-md 4">
             {% if "placeholder" in workout.featured_image.url %}
-            <img class="scale" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
+            <img class="scale" src="{% static 'images/defaultimage.jpg' %}" 
+                alt="placeholder image">
             {% else %}
-            <img class="scale" src=" {{ workout.featured_image.url }}" alt="{{ post.title }}">
+            <img class="scale" src=" {{ workout.featured_image.url }}" 
+                alt="{{ post.title }}">
             {% endif %}
         </div>
         <div class="col-md-6 mt-5 gray-bg border">
             <h2>{{ workout.title }}</h2>
             <p>{{ workout.workout | safe }}</p>
         </div>
-        
     </div>
     <hr class="card-hr">
 </article>
 
-<div class="container">
+<section class="container">
     <div class="row justify-content-between">
         <div class="col-md-4">
             <h3>Enter your score and comment here</h3>
@@ -29,7 +31,6 @@
         <div class="col-md-6">
             <h3>Current scores</h3>
         </div>
-        
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
@@ -37,7 +38,9 @@
                 <form id ="workoutcommentForm" method="post">
                     {{ workout_form | crispy }}
                     {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-outline-success btn-sm">Submit</button>
+                    <button id="submitButton" type="submit" class="btn btn-outline-success btn-sm">
+                        Submit
+                    </button>
                 </form>
                 <p class="text-muted small">*all comments and scores are subject to review</p>
                 {% else %}
@@ -48,7 +51,8 @@
         <div class="col-md-6 card my-4 card-comment">
             <div class="card-body">
                 {% for workoutcomment in workoutcomments %}
-                <div class="card-border p-2 my-4 comment-gray-bg {% if not workoutcomment.approved and workoutcomment.author == user %}white-bg{% elif not workoutcomment.approved %}d-none{% endif %}">
+                <div class="card-border p-2 my-4 comment-gray-bg {% if not workoutcomment.approved and workoutcomment.author == user %}white-bg
+                    {% elif not workoutcomment.approved %}d-none{% endif %}">
                     <h4>{{ workoutcomment.author }}</h4>
                     <hr>
                     <h5>Total Score: {{ workoutcomment.score_number }} reps</h5>
@@ -59,25 +63,28 @@
                     <p class="text-muted small"><em>*Your comment and score is waiting verification</em></p>
                     {% endif %}
                     {% if user.is_authenticated and workoutcomment.author == user %}
-                    <button class="btn btn-outline-danger btn-sm btn-delete" comment_id="{{ workoutcomment.id }}">Delete</button>
+                    <button class="btn btn-outline-danger btn-sm btn-delete" comment_id="{{ workoutcomment.id }}">
+                        Delete
+                    </button>
                     {% endif %}
                 </div>
                 {% endfor %}
             </div>
         </div>
-        
     </div>
-</div>
+</section>
 
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" 
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content p-3">
             <div class="modal-heaader">
                 <h5 class="modal-title">
                     Are you sure you want to delete?
                 </h5>
-                <button tyoe="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button tyoe="button" class="btn-close" data-bs-dismiss="modal" 
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 This action cannot be undone
@@ -88,11 +95,10 @@
             </div>
         </div>
     </div>
-
 </div>
-
 {% endblock content %}
 
+<!-- javescript code to activate modal -->
 {% block jsscript %}
 <script src="{% static 'js/workout_comments.js' %}"></script>
 {% endblock %}

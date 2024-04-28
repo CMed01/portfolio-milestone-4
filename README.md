@@ -169,6 +169,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
     - Inter
 * [ChatGPT](https://chat.openai.com/) - used to create the test blogs.
 * [WodWell](https://wodwell.com/) - used to create the library of workouts
+* [Code Beautify](https://codebeautify.org/) - used to format code
 
 ## __Testing__
 ### __Validator testing__

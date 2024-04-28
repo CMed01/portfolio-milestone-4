@@ -2,47 +2,45 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid">
+<section class="container-fluid">
     <div class="row">
         <div class="col-md-6 mx-auto">
             <h2 class="text-center">Welcome to the Workouts page</h2>
             <p class="text-center">
-                Get ready to sweat, smile, and celebrate every step of progress on your path to a stronger, healthier you.
+                Get ready to sweat, smile, and celebrate every step of progress on your path 
+                to a stronger, healthier you.
             </p>
         </div>
     </div>
-    
-    <hr>
+</section>
 
+<section class="container-fluid">
     <div class="row">
         <div class="col-md-12">
+            <hr class="card-hr">
             <div class="row">
                 {% for workout in workout_list %}
                 <article class="col-md-4">
-                    <div>
-                        <div class="card-body mb-4">
-                            <div class="image-container">
-                                {% if "placeholder" in workout.featured_image.url %}
-                                <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top img-blog" src=" {{ workout.featured_image.url }}" alt="{{ workout.title }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ workout.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'workout_detail' workout.slug %}">
-                                <h2 class="card-title">{{ workout.title }}</h2>
-                            </a>
-                            <p class="card-text">{{ workout.excerpt }}</p>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ workout.created_on}}</p>
+                    <div class="card-body mb-4">
+                        <div class="image-container">
+                            {% if "placeholder" in workout.featured_image.url %}
+                            <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
+                            {% else %}
+                            <img class="card-img-top img-blog" src=" {{ workout.featured_image.url }}" alt="{{ workout.title }}">
+                            {% endif %}
+                            <p>Author: {{ workout.author }}</p>
                         </div>
+                        <a href="{% url 'workout_detail' workout.slug %}">
+                            <h2 class="card-title">{{ workout.title }}</h2>
+                        </a>
+                        <p class="card-text">{{ workout.excerpt }}</p>
+                        <hr class="card-hr">
+                        <p class="card-text text-muted h6">{{ workout.created_on}}</p>
                     </div>
                 </article>
                 {% if forloop.counter|divisibleby:3 %}
                 </div>
-                <div class="row"> 
+                    <div class="row"> 
                 {% endif %}   
                 {% endfor %}
             </div>
@@ -68,6 +66,5 @@
         </ul>
     </nav>
     {% endif %}
-
-</div>
+</section>
 {% endblock content %}

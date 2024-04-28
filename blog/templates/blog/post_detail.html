@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!-- Main body content -->
 {% block content %}
 <article class="container-fluid">
     <div class="row mx-2">
@@ -21,9 +22,7 @@
     <hr class="card-hr">
 </article>
 
-
-
-<div class="container">
+<section class="container">
     <div class="row justify-content-between">
         <div class="col-md-6">
             <h3>Comments</h3>
@@ -36,7 +35,8 @@
         <div class="col-md-6 card my-4 card-comment">
             <div class="card-body">
                 {% for comment in comments %}
-                <div class="card-border p-2 my-4 comment-gray-bg {% if not comment.approved and comment.author == user %}white-bg{% elif not comment.approved %}d-none{% endif %}">
+                <div class="card-border p-2 my-4 comment-gray-bg {% if not comment.approved and comment.author == user %}white-bg
+                    {% elif not comment.approved %}d-none{% endif %}">
                     <h4>{{ comment.author }}</h4>
                     <hr>
                     <div id="comment{{ comment.id }}">
@@ -46,8 +46,10 @@
                     <p class="text-muted small"><em>*Your comment is awaiting approval</em></p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-outline-secondary btn-sm btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    <button class="btn btn-outline-danger btn-sm btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-outline-secondary btn-sm btn-edit" 
+                        comment_id="{{ comment.id }}">Edit</button>
+                    <button class="btn btn-outline-danger btn-sm btn-delete" 
+                        comment_id="{{ comment.id }}">Delete</button>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -71,7 +73,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -93,9 +95,9 @@
         </div>
     </div>
 </div>
-
 {% endblock content %}
 
+<!-- javescript code to activate modal -->
 {% block jsscript %}
 <script src="{% static 'js/blog_comments.js' %}"></script>
 {% endblock %}

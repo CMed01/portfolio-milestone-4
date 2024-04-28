@@ -1,21 +1,9 @@
-/* Google Fonts <uniquifier>: 
-Use a unique and descriptive class name
-<weight>: Use a value from 100 to 900 */
-
-/* .inter-<uniquifier> {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
-} */
 /* Body style */
 
 body {
   max-width: 1500px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main {
@@ -28,16 +16,16 @@ a {
 }
 
 .container-fluid {
-  width:90%;
+  width: 90%;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #CFD0D0;
+  background-color: #cfd0d0;
 }
 
 .navbar-brand {
-  color:black;
+  color: black;
   font-weight: bold;
 }
 
@@ -46,7 +34,6 @@ a {
   font-weight: 500;
 }
 
-
 .navtitle {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -54,7 +41,7 @@ a {
 }
 
 .gray-bg {
-  background-color: #CFD0D0;
+  background-color: #cfd0d0;
 }
 
 .comment-gray-bg {
@@ -62,15 +49,15 @@ a {
 }
 
 .white-bg {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* elements */
 .title-hr {
-  border: 2px solid black
+  border: 2px solid black;
 }
 .card-hr {
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 /* card */
@@ -80,23 +67,23 @@ a {
 
 .card-comment {
   overflow-y: scroll;
-  max-height:500px;
+  max-height: 500px;
 }
 
 .card-edit {
-  max-height:500px
+  max-height: 500px;
 }
 
-.card-border{
+.card-border {
   border: 1px dotted grey;
 }
 
 /* images */
 .hero-image {
   background-image: url("/static/images/hero-image3.jpg");
-  background-size:contain;
+  background-size: contain;
   color: white;
-     }
+}
 
 .scale {
   width: 100%;
@@ -105,5 +92,5 @@ a {
 }
 
 .img-blog {
-  max-height:280px;
+  max-height: 280px;
 }

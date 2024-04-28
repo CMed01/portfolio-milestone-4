@@ -2,17 +2,20 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!-- Main body content -->
 {% block content %}
 <section class="container-fluid p-0 bg-image hero-image" style="height:350px;">
     <div class="p-5 text-center">
-    <div style="background-color: rgba(0, 0, 0, 0.6);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-white">
-            <h1 class="mb-3">THE OX BOX</h1>
-            <h4 class="mb-3" style="font-style: italic;">"Strong mind, Strong body, Strong life"</h4>
+        <div style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">THE OX BOX</h1>
+                    <h4 class="mb-3" style="font-style: italic;">
+                        "Strong mind, Strong body, Strong life"
+                    </h4>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
     </div>
 </section>
 
@@ -30,8 +33,8 @@
                 <div class="col-md-5">
                     <div class="card mb-4 text-center gray-bg">
                         <div class="card-body">
-                            <h2 class="card-title">{{ about.title }}</p>
-                                <hr class="card-hr">
+                            <h2 class="card-title">{{ about.title }}</h2>
+                            <hr class="card-hr">
                             <p class="card-text card-sm">{{ about.content }}</p>
                         </div>
                     </div>
@@ -54,12 +57,17 @@
             <div class="">
                 <h2>Lets start a conversation</h2>
                 <hr>
-                <p>We have a selection of inspiring coaches on hand to support your journey to a stronger body, mind and life</p>
+                <p>
+                    We have a selection of inspiring coaches on hand to support your 
+                    journey to a stronger body, mind and life
+                </p>
                 <p>If you are looking for personlaised advice - get in touch</p>
             </div>
         </div>
         <div class="col-md-5 align-self-center">
-            <button type="submit" id="contact-me" class="btn btn-outline-dark contact-me">Contact Me!</button>
+            <button type="submit" id="contact-me" class="btn btn-outline-dark contact-me">
+                Contact Me!
+            </button>
         </div>
     </div>
 </section>
@@ -70,25 +78,27 @@
             <div class="card border-2 py-4 mx-2">
                 <div class="row justify-content-around">
                     <div class="col-md-5">
-                        <img src="{% static 'images/coach-blog2.jpg' %}" alt="personal trainer coaching client" class="card-img">
+                        <img src="{% static 'images/coach-blog2.jpg' %}" 
+                            alt="personal trainer coaching client" class="card-img">
                     </div>
-                
                     <div class="col-md-6">
-                            <h2>The Ox Blog</h2>
-                            <hr class="title-hr">
-                            <p>
-                                Read articles from our industry leading staff, who are on hand to provide you with insightful advice to build a stronger you.
-                                <br>
-                                Whether you're seeking practical tips for healthier living or simply looking to expand your knowledge, 
-                                our blog is your go-to destination for holistic wellness inspiration.
-                            </p>
-                            <a class="btn btn-outline-dark" href="{% url 'blog' %}">View artilces</a>
+                        <h2>The Ox Blog</h2>
+                        <hr class="title-hr">
+                        <p>
+                            Read articles from our industry leading staff, who are on hand to provide you with 
+                            insightful advice to build a stronger you.
+                            <br>
+                            Whether you're seeking practical tips for healthier living or simply looking to expand 
+                            your knowledge, our blog is your go-to destination for holistic wellness inspiration.
+                        </p>
+                        <a class="btn btn-outline-dark" href="{% url 'blog' %}">View artilces</a>
                     </div>
                 </div>
             </div>
         </div> 
     </div>
 </section>
+
 {% if user.is_authenticated %}
 <section class="container-fluid py-5">
     <div class="row justify-content-center">
@@ -100,12 +110,14 @@
                             <hr class="title-hr">
                             <p>
                                 Step into our workouts page, where your fitness journey truly begins.
-                                Take on a new challenge and give one of our workouts a go. Log your score and check in with the community
+                                Take on a new challenge and give one of our workouts a go. 
+                                Log your score and check in with the community
                             </p>
                             <a class="btn btn-outline-dark" href="{% url 'workout' %}">View workouts</a>
                     </div>
                     <div class="col-md-5">
-                        <img src="{% static 'images/whiteboard.jpg' %}" alt="discussing a workout on a whiteboard" class="card-img">
+                        <img src="{% static 'images/whiteboard.jpg' %}" 
+                            alt="discussing a workout on a whiteboard" class="card-img">
                     </div>
                 </div>
             </div>
@@ -122,13 +134,14 @@
                             <h2>Check out our workouts</h2>
                             <hr class="title-hr">
                             <p>
-                                Register an account and explore a curated selection of invigorating exercies designed to challenge and empower you, 
-                                whether you're a seasoned athlete or just starting out.
+                                Register an account and explore a curated selection of invigorating exercies designed 
+                                to challenge and empower you, whether you're a seasoned athlete or just starting out.
                             </p>
                             <a class="btn btn-outline-dark" href="{% url 'account_signup' %}">Register</a>
                     </div>
                     <div class="col-md-5">
-                        <img src="{% static 'images/whiteboard.jpg' %}" alt="discussing a workout on a whiteboard" class="card-img">
+                        <img src="{% static 'images/whiteboard.jpg' %}" 
+                            alt="discussing a workout on a whiteboard" class="card-img">
                     </div>
                 </div>
             </div>
@@ -138,7 +151,8 @@
 {% endif %}
 
 <!-- Contact form modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" 
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content p-3">
             <div class="modal-header">
@@ -150,17 +164,19 @@
                 <form id="contactForm" method="post">
                     {{ contact_form | crispy }}
                     {% csrf_token %}
-                    <a class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Close</a>
-                    <button id="contactConfirm" type="submit" class="btn btn-outline-success btn-sm">Contact</a>
+                    <a class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" 
+                        aria-label="Close">Close</a>
+                    <button id="contactConfirm" type="submit" class="btn btn-outline-success btn-sm">
+                        Contact
+                    </button>
                 </form>
             </div>
         </div>
     </div>
-
 </div>
-
 {% endblock %}
 
+<!-- javescript code to activate modal -->
 {% block jsscript %}
 <script src="{% static 'js/index_contact.js' %}"></script>
 {% endblock %}

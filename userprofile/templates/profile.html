@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="container">
+<section class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             {% if "placeholder" in profile.profile_image.url %}
@@ -24,8 +24,9 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container">
+</section>
+
+<section class="container">
     <div class="row">
         <div class="col-md-8 offset-md-1">
             <form id ="profilecommentForm" method="post">
@@ -35,6 +36,6 @@
             </form>
         </div>
     </div>
-</div>
+</section>
 {% endif %}
 {% endblock content %}

@@ -13,14 +13,21 @@
 
 <head>
     <title>The Ox Box</title>
+    
+    <!-- Meta data and SEO terms -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Welcome to The Ox Box | Our aim is to build strength, resilience, and community 
+        spirit in pursuit of a healthier and more fulfilling lifestyle. ">
+    <meta name="keywords" content="blog crossfit health healthspan crossfit fitness strong-body strong-mind 
+        strong-life workouts health-and-lifestyle-blog health-advice functional-fitness nutrition-advice longevity">
+    <meta name="author" content="Chris Meddings">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-
+    
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
@@ -37,16 +44,15 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
-
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <div>
                 <img class="navbar-brand" src="{% static 'images/favicon/favicon-32x32.png' %}" alt="favicon logo">
             </div>
             <a class="navbar-brand" href="{% url 'home' %}">THE OX BOX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -60,7 +66,8 @@
                     {% if user.is_authenticated %}
                     {% if user.is_staff %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" 
+                            aria-expanded="false">
                         Account
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -81,7 +88,8 @@
                     </li>
                     {% else %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" 
+                            aria-expanded="false">
                         Account
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -127,29 +135,27 @@
             </div>
         </div>
     </div>
+
     <main>
-        
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-
     </main>
 
     <!-- Footer -->
-    <div class="navbar navbar-expand-lg navbar-light">
-        <footer class="container-fluid">
+    <footer class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
             <div class="col-md-4">
                 <img class="navbar-brand px-2" src="{% static 'images/favicon/favicon-32x32.png' %}" alt="favicon logo">
                 <span class="text-body-secondary">© 2024 Company, Inc</span>
             </div>
-      
             <ul class="nav me-4 col-md-4 justify-content-end list-unstyled">
                 <li class="me-2">Follow us: </li>
-                <li class="me-2"><a class="text-body-secondary" href="#"><i class="fab fa-instagram-square ms-3"></i></a></li>
-                <li class="me-2"><a class="text-body-secondary" href="#"><i class="fab fa-youtube-square ms-3"></i></a></li>
+                <li class="me-2"><a class="text-body-secondary" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square ms-3"></i></a></li>
+                <li class="me-2"><a class="text-body-secondary" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square ms-3"></i></a></li>
             </ul>
-        </footer>
-    </div>
+        </div>
+    </footer>
     
     <!-- Bootstrap5 script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
