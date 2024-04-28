@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
+
 class Post(models.Model):
     """
     Stores a single blog post entry related to :model:`auth.User`.
@@ -27,6 +27,7 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
+
 class PostComment(models.Model):
     post = models.ForeignKey(
         Post,on_delete=models.CASCADE, related_name="comments"
@@ -43,3 +44,4 @@ class PostComment(models.Model):
 
     def __str__(self):
         return f"Comment: {self.body} by {self.author}"
+        

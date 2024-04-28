@@ -5,7 +5,7 @@ from django.contrib import messages
 from .models import Post, PostComment
 from .forms import BlogcommentForm
 
-# Create your views here.
+
 class PostList(generic.ListView):
     """
     Returns all published posts in :model:`blog.Post`
@@ -24,6 +24,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog/post.html"
     paginate_by = 6
+
 
 def post_detail(request, slug):
     """
@@ -78,6 +79,7 @@ def post_detail(request, slug):
             },
     )
 
+
 def comment_edit(request, slug, comment_id):
     """
     View to edit blog comments
@@ -99,6 +101,7 @@ def comment_edit(request, slug, comment_id):
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
     
     return HttpResponseRedirect(reverse('blog_detail',args=[slug]))
+
 
 def comment_delete(request, slug, comment_id):
     """
@@ -122,3 +125,4 @@ def comment_delete(request, slug, comment_id):
             "You can only delete yout own comments!"
             )
     return HttpResponseRedirect(reverse('blog_detail',args=[slug]))
+    

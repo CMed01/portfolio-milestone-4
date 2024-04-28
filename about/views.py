@@ -4,7 +4,7 @@ from django.contrib import messages
 from .models import About, ContactRequest
 from .forms import ContactForm
 
-# Create your views here.
+
 def about_page(request):
     about_list = About.objects.filter(status=1).order_by("updated_on")
 
@@ -27,4 +27,3 @@ def about_page(request):
             "contact_form": contact_form,
         },
         )
-

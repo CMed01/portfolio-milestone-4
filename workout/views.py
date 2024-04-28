@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Workout, WorkoutComment
 from .forms import WorkoutcommentForm
 
-# Create your views here.
 
 class WorkoutList(LoginRequiredMixin,generic.ListView):
     """
@@ -27,6 +26,7 @@ class WorkoutList(LoginRequiredMixin,generic.ListView):
     queryset = Workout.objects.filter(status=1).order_by("-created_on")
     template_name = "workout.html"
     paginate_by = 6
+
 
 @login_required
 def workout_detail(request, slug):
@@ -82,6 +82,7 @@ def workout_detail(request, slug):
             'account/signup.html',
         )
 
+
 @login_required
 def workout_comment_delete(request, slug, comment_id):
     """
@@ -105,3 +106,4 @@ def workout_comment_delete(request, slug, comment_id):
             "You can only delete yout own comments!"
             )
     return HttpResponseRedirect(reverse('workout_detail',args=[slug]))
+    

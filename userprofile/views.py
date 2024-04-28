@@ -6,11 +6,11 @@ from .models import Profile, User
 from .forms import ProfileForm
 from django.contrib import messages
 
-# Create your views here.
 
 @login_required
 def view_profile(request):
-
+    """
+    """
     queryset = Profile.objects.all()
     profile = get_object_or_404(queryset, author=request.user)
     profile_form = ProfileForm()
@@ -23,8 +23,11 @@ def view_profile(request):
             },
     )
 
+
 @login_required
 def edit_profile(request):
+    """
+    """
     profile = request.user.profile
 
     if request.method == 'POST':
@@ -46,4 +49,3 @@ def edit_profile(request):
 
     return HttpResponseRedirect(reverse('profile',args=[slug])) 
     
-     
