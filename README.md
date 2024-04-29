@@ -67,7 +67,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
             - I see a list of available workouts with details such as date, time, and description
 
 - US08: Create, update and delete comments on workouts
-    - As a registered user, I can read, review and delete comments on workouts so that I can share feedback or ask questions
+    - As a registered user, I can read and delete comments on workouts so that I can share feedback or ask questions
         - Acceptance criteria
             - I can view the comment section below each workout.
             - I can write a comment and submit it
@@ -112,7 +112,6 @@ The Ox Box Project is designed to create a vibrant online community focused on h
             - I have superuser access for all features of the website.
 
 ### __Features__
-- [Wireframes](https://github.com/CMed01/portfolio-milestone-4/blob/main/documentation/wireframes/wirefranes-figma.pdf) - designed using [Figma](https://www.figma.com/)
 
 #### __Current__
 - F01: Navbar
@@ -140,6 +139,43 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 - Personal record of workout and tracking of performance.
 - Personalised dashboard for tracking activity
 - Registered user communication
+
+### __Design__
+#### __Wireframes__
+- [Figma](https://www.figma.com/) was used to design the wireframes for this project.
+    - Changes post design:
+        - Image styles on both the blog and workout pages were amended moving away from rounded image containers.
+        - A display modal was implemented using javascript for the contact form
+    
+    - [Wireframes](https://github.com/CMed01/portfolio-milestone-4/blob/main/documentation/wireframes/wirefranes-figma.pdf) can be accessed via this link or through the GitHub repository (documentation -> wireframes)
+    
+#### __Data Models (ERD)__
+- [LucidChat](https://www.lucidchart.com/) was used to create entity relationship diagrams for the data modals used in thsi project
+    <details closed>
+    <summary>Data modals</summary>
+    <br>
+
+    ![ERD](documentation/erd/erd.jpg)
+
+    </details>
+
+
+#### __Aesthetics__
+- Typography
+    - [Google Fonts](https://fonts.google.com/) was used to source the following fonts that were used throughout the project site.
+        - Bebas Neue
+        - Inter
+- Images
+    - All current images were copyright free sourced from [Pexels](https://www.pexels.com/).
+
+- Colors
+    - [Coolors](https://coolors.co/) was used to generate the color scheme for the project.
+        <details closed>
+        <summary>Colors scheme </summary>
+        <br>
+
+        ![The Ox Box Colors](documentation/doc_images/ox-box-coolors.png)
+        </details>
  
 ## __Technologies__
 - [Neon](https://neon.tech/)
@@ -157,14 +193,13 @@ The Ox Box Project is designed to create a vibrant online community focused on h
     * [AllAuth](https://docs.allauth.org/en/latest/) - use to provide authetication framework for project
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
 * [Heroku](https://www.heroku.com/) - Used to deploy the website
-* [LucidChat]() - Entity relationship diagrams
-* [Figma]() - wireframes
+
+
 * [Neon]() - Database
 * [Favicon](https://favicon.io/) - Used to create favicon
 * [Font Awesome]()
 * [Bootstrap 5](https://getbootstrap.com/)
     * [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
-* [Pexels](https://www.pexels.com/) - Used for stock copyright free images
 * [Google Fonts](https://fonts.google.com/)
     - Bebas Neue
     - Inter
@@ -208,7 +243,22 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 <summary>The below table details the test cases that were used. </summary>
 <br>
 
-- Insert table of tests here
+| Test number | User Story                                               | Test Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Outcome |
+| ----------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| TS01        | US01: Navigate the site                                  | Verify that users can access the home page and easily understand the purpose of the site.<br>Validate that users can use the menu bar to navigate through the site's content.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Pass    |
+| TS02        | US02: Read about the site                                | Validate that users can successfully navigate to the home page and view 4 short articles about the website                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Pass    |
+| TS03        | US03: View blog articles                                 | Validate that users can click on the Blog link within the nav bar<br>On click the user is directed to the blog section of the website and can see a list of blog articles with titles and previews.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Pass    |
+| TS04        | US04: Reach out for personlaised services (contact form) | Ensure that all users can click on the contact form button.<br>On click a modal is displayed with an active form with fields to input their name, email and message.<br>On submission a message is displayed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Pass    |
+| TS05        | US05: Account registration<br>                           | Validate that non-authorised users can view a registration link in the nav bar.<br>On click the user is directed to the registration page and a form with fields for their name, email, and password is viewable.<br>Upon successful registration, the user receives a confirmation message.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Pass    |
+| TS06        | US06: Account login                                      | Validate that non-authorised users can view a login link in the nav bar.<br>On click the user is directed to the login page and a form with fields for username and password is viewable.<br>Non-authorised attempts to sign in will be redirected<br>Non-registered users can view and click on a register button (see T05)<br>Registered users, following successful completion of the login in form, will be redirected to the homepage.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Pass    |
+| TS07        | US07: Access registered user content                     | Validate that registered users, after logging in, can navigate to the workouts section of the website and see a list of available workouts.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Pass    |
+| TS08        | US08: Create and delete comments on workouts             | Validate that authorised users only are able to see the link for workouts in the navbar after logging in.<br>On click, authorised users are directed to the workout page and can view a paginated list of 6 articles.<br>On click of an article, the authorised user is directed to the article page where the more information of the workout is posted<br>The authorised user can submit their comment and workout scorce using the form displayed at the bottom of the article page.<br>The authorised user's comments will be clearly identified as awaiting review on initial submission.<br>After review by an admin staff and if approved this information will disappear and the comment will be available for view by all.<br>The authroised user can also view approved comments or all self written comments.<br>The authorised user can only delete their comments                                                   | Pass    |
+| TS09        | US09: Create, update and delete comments on blog article | Validate that all users only are able to see the link for blog in the navbar.<br>On click, authorised users are directed to the blog page and can view a paginated list of 6 articles.<br>On click of an article, the authorised user is directed to the article page where the more information of the article is posted<br>Only authorised users can submit a comment using the form displayed at the bottom of the article page.<br>The authorised user's comments will be clearly identified as awaiting review on initial submission.<br>After review by an admin staff and if approved this information will disappear and the comment will be available for view by all.<br>The authroised user can also view approved comments or all self written comments.<br>The authorised user can only delete their comments<br>Non-authorised users can view the blog article and the comments, but cannot write, edit or delete. | Pass    |
+| TS10        | US10: Restrict access to register users                  | Validate that non-registered users have limited access to certain features, including only being able to view blog articles, and not being able to view or comment on blog articles or access, view, or comment on workouts.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Pass    |
+| TS11        | US11: Manage blog content                                | Ensure that all staff members can create, review, and delete blog content and approve submitted comments. Also, validate that the admin has access to a backend dashboard where new blog content can be added and pending comments can be reviewed and approved or rejected.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Pass    |
+| TS12        | US12: Manage workout content                             | Validate that all staff members can create, review, and delete workout content and approve submitted comments. Ensure that the admin can view and modify workout content and comment on blog articles and workouts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Pass    |
+| TS13        | US13: Review contact form submissions                    | In addition to the staff member functions, validate that only superusers can access and review contact form submissions with full control and access.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Pass    |
+| TS14        | \- US14: Control access for all users                    | Validate that only the superuser has full control and access to all content with superuser access for all features of the website.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Pass    |
 
 </details>
 
