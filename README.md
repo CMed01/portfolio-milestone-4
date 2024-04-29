@@ -113,31 +113,234 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 
 ### __Features__
 
-#### __Current__
-- F01: Navbar
-- F02: Landing page/About page
-- F03: Contact Form
-    * Admin portal
-- F04: User authentication
-    * Registration
-    * Login
-    * Sign out
-    * Access control
-- F06: Blog/Workout articles
-    * Create
-- F07: Commenting
-    * Create
-    * Admin review
-    * Amend
-    * Delete
-- F08: UX messaging
-    * Successful POST requests
+#### __F01: Navbar__
+
+
+The navbar is present on all pages of th site. It is used using bootstrap's navbar styles. When the user scrolls the navabr dissappears. The navbar remains responsive and on smaller devices the navbar collapses into a toggle menu.
+
+The navbar contains clickable links for the user to navigate through the site.
+
+There are two navbar views with different accessibkle links depending on the status of the user.
+
+
+<details closed>
+<summary>Non-authorised user</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/navbar-non-user.jpg)
+
+</details>
+
+<details closed>
+<summary>Authroised user - non-staff</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/navbar-non-staff.jpg)
+
+</details>
+
+<details closed>
+<summary>Authroised user - non-staff</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/navbar-staff.jpg)
+
+</details>
+
+#### __F02: Landing page/About page__
+
+Upon arrival to the home page, the user is greeted with a hero image detailing the website name and the motto for the site.
+
+<details closed>
+<summary>Hero image</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/hero-image.jpg)
+
+</details>
+
+
+Below the hero image, the user can read four short "about me" ariticles outlining the ambition of the owners and the purpose of the website.
+
+There cards are editable within the admin page and the most recently updated articles (up to a maximum of 4) will be displayed, allowing the superuser cutomability for the landing page.
+
+<details closed>
+<summary>About me articles</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/landing-page.jpg)
+
+</details>
+
+#### __F03: Contact Form__
+
+After the "about me" pieces all users can view a contact me section with a button which will open up a modal containing a submittable form. The form conatins fields that can be posted to the database for review by the superusers.
+
+<details closed>
+<summary>Contact section</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/contact-section.jpg)
+
+</details>
+
+<details closed>
+<summary>Contact modal</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/contact-modal.jpg)
+
+</details>
+
+#### __F04: User authentication__
+
+Django AllAuth has been used to provide all authentication process throughout the site. Functions in each app have also been decorated with login requirements to provide extra security. The provided templates for registration, sign in and sign out have been tailored to match the design of the site. Upon successful actions with each authentication process a message is displayed to the user detailing the outcome of each action
+
+<details closed>
+<summary>Registration</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/register.jpg)
+
+</details>
+
+<details closed>
+<summary>Sign in</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/sign-in.jpg)
+
+</details>
+
+<details closed>
+<summary>Sign out</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/contact-section.jpg)
+
+</details>
+
+<details closed>
+<summary>Messages</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/message2.jpg)
+
+</details>
+
+#### __F04: User Profile__
+
+Once a user has registtered and become an authorised user. A profile is automatically created for that user, where they are able to edit their profile biography. Currently only the user can view their own profile page - see future developments
+
+<details closed>
+<summary>Profile page</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/profile.jpg)
+
+</details>
+
+<details closed>
+<summary>Profile edit</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/edit-profile.jpg)
+
+</details>
+
+#### __F07: Blog/Workout articles__
+
+Both the blog and workout pages function in similar ways however the workout pages are only viewable to authorised users after logging in. Non-authorised users can view the blog pages including any comments.
+
+On arrival to either page, the user is greeted with an short detail of the purpose of the page followed by a list of pgainated articles with the most recently posted articles appearing first. The titles for each articles can be clicked to access the articles in more detail. Within each article there is the ability for the user to write, review and delete comments.
+
+
+
+<details closed>
+<summary>Blog page</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/blog-home.jpg)
+
+</details>
+
+<details closed>
+<summary>Blog article example</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/blog-article.jpg)
+
+</details>
+
+<details closed>
+<summary>Workout page</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/workout-home.jpg)
+
+</details>
+
+<details closed>
+<summary>Workout article example</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/workout-article.jpg)
+
+</details>
+
+For all comments the authorised user can write, edit and delete, except for workout comments where authorised users cannot edit. Following successful comment actions, the user is redirected to the original aricle page and a message is displayed at the top of the page informing the user of the outcome of any actions.
+
+<details closed>
+<summary>Comment example</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/comment-example.jpg)
+
+</details>
+
+<details closed>
+<summary>Comment submit</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/comment-submitted.jpg)
+
+</details>
+
+<details closed>
+<summary>Messages</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/message-success.jpg)
+
+</details>
+
+
+#### __F08 Admin__
+
+Staff members have been given admin right to..... the following
+<details closed>
+<summary>Staff admin portal</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/staff-admin.jpg)
+
+</details>
+<br>
+
+A Superuser has access to review contact form submission and full control access.
+
+<details closed>
+<summary>Superuser admin portal</summary>
+<br>
+
+![navbar-not-logged-in](documentation/doc_images/superuser-admin.jpg)
+
+</details>
 
 #### __Future__
-- New gym facility for personal use
-- Online booking system for access to gym
-- Personal record of workout and tracking of performance.
-- Personalised dashboard for tracking activity
+- Improved data within profile page to include a list of all comments on blog pages and workout completed with associated scores
+- On each workout article, to include a leaderboard of the scores submitted and verified.
+- All registered users can click on the profile of any commenting author to view their profile with non-editable functions.
 - Registered user communication
 
 ### __Design__

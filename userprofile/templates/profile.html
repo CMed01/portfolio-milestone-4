@@ -26,21 +26,9 @@
             </div>
             <div class="row my-4">
                 <div class="col-md-2 offset-md-10">
-                    <a href="{% url 'profile_edit' profile.slug %}">Edit Profile</a>
+                    <a href="{% url 'profile_edit' profile.slug %}" class="btn btn-outline-dark btn-sm">Edit Profile</a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="container d-none">
-    <div class="row">
-        <div class="col-md-8 offset-md-1">
-            <form id ="profilecommentForm" method="post">
-                {{ profile_form | crispy }}
-                {% csrf_token %}
-                <button id="submitButton" type="submit">Submit</button>
-            </form>
         </div>
     </div>
 </section>
