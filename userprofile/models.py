@@ -10,8 +10,8 @@ class Profile(models.Model):
     Stores a user profile data related to :model:`auth.User`.
     """
     author = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
+    bio = models.TextField(max_length=500, blank=True)
     profile_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

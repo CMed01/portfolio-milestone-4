@@ -9,5 +9,5 @@ from .models import Profile
 def create_profile(sender, instance, created, **kwargs):
     """Create profile when new user registers"""
     if created:
-        Profile.objects.create(author=instance)
+        Profile.objects.create(author=instance, slug=instance)
         
