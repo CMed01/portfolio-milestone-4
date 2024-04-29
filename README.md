@@ -127,7 +127,7 @@ There are two navbar views with different accessibkle links depending on the sta
 <summary>Non-authorised user</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/navbar-non-user.jpg)
+![Non-authorised user](documentation/doc_images/navbar-non-user.jpg)
 
 </details>
 
@@ -135,7 +135,7 @@ There are two navbar views with different accessibkle links depending on the sta
 <summary>Authroised user - non-staff</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/navbar-non-staff.jpg)
+![Authroised user - non-staff](documentation/doc_images/navbar-non-staff.jpg)
 
 </details>
 
@@ -143,7 +143,7 @@ There are two navbar views with different accessibkle links depending on the sta
 <summary>Authroised user - non-staff</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/navbar-staff.jpg)
+![Authroised user - non-staff](documentation/doc_images/navbar-staff.jpg)
 
 </details>
 
@@ -155,7 +155,7 @@ Upon arrival to the home page, the user is greeted with a hero image detailing t
 <summary>Hero image</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/hero-image.jpg)
+![Hero image](documentation/doc_images/hero-image.jpg)
 
 </details>
 
@@ -168,7 +168,7 @@ There cards are editable within the admin page and the most recently updated art
 <summary>About me articles</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/landing-page.jpg)
+![About me articles](documentation/doc_images/landing-page.jpg)
 
 </details>
 
@@ -180,7 +180,7 @@ After the "about me" pieces all users can view a contact me section with a butto
 <summary>Contact section</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/contact-section.jpg)
+![Contact section](documentation/doc_images/contact-section.jpg)
 
 </details>
 
@@ -188,7 +188,7 @@ After the "about me" pieces all users can view a contact me section with a butto
 <summary>Contact modal</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/contact-modal.jpg)
+![Contact modal](documentation/doc_images/contact-modal.jpg)
 
 </details>
 
@@ -200,7 +200,7 @@ Django AllAuth has been used to provide all authentication process throughout th
 <summary>Registration</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/register.jpg)
+![Registration](documentation/doc_images/register.jpg)
 
 </details>
 
@@ -208,7 +208,7 @@ Django AllAuth has been used to provide all authentication process throughout th
 <summary>Sign in</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/sign-in.jpg)
+![Sign in](documentation/doc_images/sign-in.jpg)
 
 </details>
 
@@ -216,7 +216,7 @@ Django AllAuth has been used to provide all authentication process throughout th
 <summary>Sign out</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/contact-section.jpg)
+![Sign out](documentation/doc_images/contact-section.jpg)
 
 </details>
 
@@ -224,7 +224,7 @@ Django AllAuth has been used to provide all authentication process throughout th
 <summary>Messages</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/message2.jpg)
+![Messages](documentation/doc_images/message2.jpg)
 
 </details>
 
@@ -236,7 +236,7 @@ Once a user has registtered and become an authorised user. A profile is automati
 <summary>Profile page</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/profile.jpg)
+![Profile page](documentation/doc_images/profile.jpg)
 
 </details>
 
@@ -244,7 +244,7 @@ Once a user has registtered and become an authorised user. A profile is automati
 <summary>Profile edit</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/edit-profile.jpg)
+![Profile edit](documentation/doc_images/edit-profile.jpg)
 
 </details>
 
@@ -260,7 +260,7 @@ On arrival to either page, the user is greeted with an short detail of the purpo
 <summary>Blog page</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/blog-home.jpg)
+![Blog page](documentation/doc_images/blog-home.jpg)
 
 </details>
 
@@ -268,7 +268,7 @@ On arrival to either page, the user is greeted with an short detail of the purpo
 <summary>Blog article example</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/blog-article.jpg)
+![Blog article example](documentation/doc_images/blog-article.jpg)
 
 </details>
 
@@ -276,7 +276,7 @@ On arrival to either page, the user is greeted with an short detail of the purpo
 <summary>Workout page</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/workout-home.jpg)
+![Workout page](documentation/doc_images/workout-home.jpg)
 
 </details>
 
@@ -284,7 +284,7 @@ On arrival to either page, the user is greeted with an short detail of the purpo
 <summary>Workout article example</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/workout-article.jpg)
+![Workout article example](documentation/doc_images/workout-article.jpg)
 
 </details>
 
@@ -294,7 +294,7 @@ For all comments the authorised user can write, edit and delete, except for work
 <summary>Comment example</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/comment-example.jpg)
+![Comment example](documentation/doc_images/comment-example.jpg)
 
 </details>
 
@@ -302,7 +302,7 @@ For all comments the authorised user can write, edit and delete, except for work
 <summary>Comment submit</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/comment-submitted.jpg)
+![Comment submit](documentation/doc_images/comment-submitted.jpg)
 
 </details>
 
@@ -310,7 +310,7 @@ For all comments the authorised user can write, edit and delete, except for work
 <summary>Messages</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/message-success.jpg)
+![Messages](documentation/doc_images/message-success.jpg)
 
 </details>
 
@@ -322,7 +322,7 @@ Staff members have been given admin right to..... the following
 <summary>Staff admin portal</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/staff-admin.jpg)
+![Staff admin portal](documentation/doc_images/staff-admin.jpg)
 
 </details>
 <br>
@@ -333,7 +333,7 @@ A Superuser has access to review contact form submission and full control access
 <summary>Superuser admin portal</summary>
 <br>
 
-![navbar-not-logged-in](documentation/doc_images/superuser-admin.jpg)
+![Superuser admin portal](documentation/doc_images/superuser-admin.jpg)
 
 </details>
 
@@ -381,7 +381,6 @@ A Superuser has access to review contact form submission and full control access
         </details>
  
 ## __Technologies__
-- [Neon](https://neon.tech/)
 
 ### __Languages__
 
@@ -392,23 +391,18 @@ A Superuser has access to review contact form submission and full control access
 
 ### __Frameworks, programs and libraries__
 
-* [Django]() - Framework used to create full stack
+* [Django](https://docs.djangoproject.com/en/5.0/) - Framework used to create full stack
     * [AllAuth](https://docs.allauth.org/en/latest/) - use to provide authetication framework for project
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
 * [Heroku](https://www.heroku.com/) - Used to deploy the website
-
-
-* [Neon]() - Database
+- [Neon](https://neon.tech/) - database used within project
 * [Favicon](https://favicon.io/) - Used to create favicon
-* [Font Awesome]()
-* [Bootstrap 5](https://getbootstrap.com/)
-    * [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
-* [Google Fonts](https://fonts.google.com/)
-    - Bebas Neue
-    - Inter
-* [ChatGPT](https://chat.openai.com/) - used to create the test blogs.
-* [WodWell](https://wodwell.com/) - used to create the library of workouts
-* [Code Beautify](https://codebeautify.org/) - used to format code
+* [Font Awesome](https://fontawesome.com/) - Used to add special font images to website
+* [Bootstrap 5](https://getbootstrap.com/) - Used to add style to the displayed pages
+    * [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/) - Information page used to add more UX to the pagination list
+* [ChatGPT](https://chat.openai.com/) - Used to create the test blogs, user biography and landing pages articles.
+* [WodWell](https://wodwell.com/) - Used to create the library of workouts
+* [Code Beautify](https://codebeautify.org/) - used to format HTML and CSS code
 
 ## __Testing__
 ### __Validator testing__
@@ -416,11 +410,39 @@ A Superuser has access to review contact form submission and full control access
 * __[W3C Markup Validation Service](https://validator.w3.org/)__
     - Describe Test and Results
 
+    <details closed>
+    <summary>Index page</summary>
+    <br>
+
+    ![Index page](documentation/validation_images/w3c-html-index-validation-280424.jpg)
+    </details>
+
+    <details closed>
+    <summary>Blog page</summary>
+    <br>
+
+    ![Blog page](documentation/validation_images/w3c-html-blog-validation-280424.jpg)
+    </details>
+
+    <details closed>
+    <summary>Workout page</summary>
+    <br>
+
+    ![Workout page](documentation/validation_images/w3c-html-workout-validation-280424.jpg)
+    </details>
+
 <br>
 
 * __[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)__
     - Describe Test and Results
     
+    <details closed>
+    <summary>css result</summary>
+    <br>
+
+    ![css validation](documentation/validation_images/w3c-css-validation-280424.jpg)
+    </details>
+
 <br>
 
 * __[JavaScript Testing (JSHint)](https://jshint.com/)__
