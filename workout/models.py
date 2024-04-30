@@ -7,7 +7,6 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Workout(models.Model):
     """Create Workout Modal
-    
     Stores a user profile data related to :model:`auth.User`.
     """
     title = models.CharField(max_length=200, unique=True)
@@ -21,7 +20,7 @@ class Workout(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    
+
     class Meta:
         ordering = ["-created_on"]
 
@@ -31,7 +30,6 @@ class Workout(models.Model):
 
 class WorkoutComment(models.Model):
     """Create WorkoutComment Modal
-    
     Stores comment post entries related to :model:`auth.User`
     and :modal :workout.Workout
     """
@@ -51,4 +49,3 @@ class WorkoutComment(models.Model):
 
     def __str__(self):
         return f"Athlete score: {self.score_number} reps by {self.author}"
-        

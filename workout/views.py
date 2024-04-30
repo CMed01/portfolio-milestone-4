@@ -8,21 +8,16 @@ from .models import Workout, WorkoutComment
 from .forms import WorkoutcommentForm
 
 
-class WorkoutList(LoginRequiredMixin,generic.ListView):
+class WorkoutList(LoginRequiredMixin, generic.ListView):
     """Create Workout View
-
     Returns all published workout posts in :model:`workout.Workouts`
-    and displays them in a page of six posts. 
-
+    and displays them in a page of six posts.
     **Context**
-
     ``queryset``
         All published instances of :model:`workout.Workout`
     ``paginate_by``
         Number of posts per page.
-        
     **Template:**
-
     :template:`workout/workout.html`
     """
     queryset = Workout.objects.filter(status=1).order_by("-created_on")
@@ -61,7 +56,9 @@ def workout_detail(request, slug):
                 workout_post.post = workout
                 workout_post.save()
                 messages.add_message(
-                    request, messages.SUCCESS, 'Score submitted and awaiting approval'
+                    request,
+                    messages.SUCCESS,
+                    'Score submitted and awaiting approval'
                     )
 
         workout_form = WorkoutcommentForm()
@@ -74,9 +71,9 @@ def workout_detail(request, slug):
                 "workoutcomments": workoutcomments,
                 "workout_form": workout_form,
                 },
-    )
+                )
     else:
-        return render (
+        return render(
             request,
             'account/signup.html',
         )
@@ -96,19 +93,18 @@ def workout_comment_delete(request, slug, comment_id):
     queryset = Workout.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     workout_comment = get_object_or_404(WorkoutComment, pk=comment_id)
-    
+
     if workout_comment.author == request.user:
         workout_comment.delete()
         messages.add_message(
-            request, 
-            messages.SUCCESS, 
+            request,
+            messages.SUCCESS,
             "Comment deleted!"
             )
     else:
         messages.add_message(
-            request, 
-            messages.ERROR, 
+            request,
+            messages.ERROR,
             "You can only delete yout own comments!"
             )
-    return HttpResponseRedirect(reverse('workout_detail',args=[slug]))
-    
+    return HttpResponseRedirect(reverse('workout_detail', args=[slug]))

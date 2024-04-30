@@ -7,9 +7,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class About(models.Model):
     """Create PostComment Modal
-
-    Stores 'About' content for display on the landing page that provides the user information 
-    about the owner and purpose of website.
+    Stores 'About' content for display on the landing page that
+    provides the user information about the owner and purpose of
+    website.
     """
     title = models.CharField(max_length=200, unique=True)
     content = models.TextField()
@@ -26,8 +26,8 @@ class About(models.Model):
 
 class ContactRequest(models.Model):
     """Create CommentRequest Modal
-    
-    Stores inputted data by the user submited via the 
+
+    Stores inputted data by the user submited via the
     ContactForm()
     """
     name = models.CharField(max_length=200)

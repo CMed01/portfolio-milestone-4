@@ -416,13 +416,16 @@ A Superuser has access to review contact form submission and full control access
 ### __Validator testing__
 
 * __[W3C Markup Validation Service](https://validator.w3.org/)__
-    - Describe Test and Results
+    - All pages manually tested with no major errors.
+        - Error message for all pages in releation to font awesome script which is brought on page render. 
+        - No other errors found
 
     <details closed>
     <summary>Index page</summary>
     <br>
 
     ![Index page](documentation/validation_images/w3c-html-index-validation-280424.jpg)
+    ![Index page](documentation/validation_images/index-html.jpg)
     </details>
 
     <details closed>
@@ -430,6 +433,8 @@ A Superuser has access to review contact form submission and full control access
     <br>
 
     ![Blog page](documentation/validation_images/w3c-html-blog-validation-280424.jpg)
+    ![Index page](documentation/validation_images/blog-html.jpg)
+    ![Index page](documentation/validation_images/blog-article-html.jpg)
     </details>
 
     <details closed>
@@ -437,12 +442,29 @@ A Superuser has access to review contact form submission and full control access
     <br>
 
     ![Workout page](documentation/validation_images/w3c-html-workout-validation-280424.jpg)
+    ![Index page](documentation/validation_images/workout-html.jpg)
+    ![Index page](documentation/validation_images/workout-article-html.jpg)
+    </details>
+
+    <details closed>
+    <summary>Profile page</summary>
+    <br>
+
+    ![Index page](documentation/validation_images/profile-edit-html.jpg)
+    ![Index page](documentation/validation_images/profile-html.jpg)
+    </details>
+
+    <details closed>
+    <summary>Warning - font awesome</summary>
+    <br>
+
+    ![Index page](documentation/validation_images/fontawesome-error.jpg)
     </details>
 
 <br>
 
 * __[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)__
-    - Describe Test and Results
+    - No errors found in style.css
     
     <details closed>
     <summary>css result</summary>
@@ -454,12 +476,66 @@ A Superuser has access to review contact form submission and full control access
 <br>
 
 * __[JavaScript Testing (JSHint)](https://jshint.com/)__
-    - Describe Test and Results
+    - No errors found in javascript code
+
+    <details closed>
+    <summary>Index page</summary>
+    <br>
+
+    ![JS Hint - Index page](documentation/validation_images/js-hint-index.jpg)
+    </details>
+
+    <details closed>
+    <summary>Blog page</summary>
+    <br>
+
+    ![JS Hint - Blog page](documentation/validation_images/js-hint-blog.jpg)
+    </details>
+
+    <details closed>
+    <summary>Workout page</summary>
+    <br>
+
+    ![JS Hint - Workout page](documentation/validation_images/js-hint-workout.jpg)
+    </details>
+
 
 <br>
 
 * __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
-    - Describe Test and Results
+    - Generally all pages score above 90% on performance accessibility and SEO.
+    - Amber warnings on best practices mainly affected by external Clouidnary API
+
+    <details closed>
+    <summary>Index page</summary>
+    <br>
+
+    ![Lighthouse - index page](documentation/validation_images/light-house-test-index.jpg)
+    </details>
+
+    <details closed>
+    <summary>Blog page</summary>
+    <br>
+
+    ![Lighthouse - blog page](documentation/validation_images/light-house-test-blog.jpg)
+    ![Lighthouse - blog article page](documentation/validation_images/blog-article-light-house.jpg)
+    </details>
+
+    <details closed>
+    <summary>Workout page</summary>
+    <br>
+
+    ![Lighthouse - Workout page](documentation/validation_images/workout-lighthouse.jpg.jpg)
+    ![Lighthouse - Workout article page](documentation/validation_images/light-house-test-workout-article.jpg)
+    </details>
+
+    <details closed>
+    <summary>Profile page</summary>
+    <br>
+
+    ![Lighthouse - Workout page](documentation/validation_images/light-house-test-profile.jpg)
+    </details>
+
 
 <br>
 

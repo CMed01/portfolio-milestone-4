@@ -92,5 +92,6 @@ a {
 }
 
 .img-blog {
-  max-height: 280px;
+  max-height: 90%;
+  max-width:90%;
 }

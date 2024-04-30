@@ -8,19 +8,14 @@ from .forms import BlogcommentForm
 
 class PostList(generic.ListView):
     """Create Posts View
-
     Returns all published blog posts in :model:`blog.Post`
-    and displays them in a page of six posts. 
-    
+    and displays them in a page of six posts.
     **Context**
-
     ``queryset``
         All published instances of :model:`blog.Post`
     ``paginate_by``
         Number of posts per page.
-        
     **Template:**
-
     :template:`blog/post.html`
     """
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -52,10 +47,10 @@ def post_detail(request, slug):
 
     if request.method == "POST":
         if not request.user.is_authenticated:
-            messages.add_message.ERROR, 'You need to be registered to submit a comment'
-            HttpResponseRedirect(reverse('blog_detail',args=[slug]))
-        
-        
+            messages.add_message.ERROR, 
+            'You need to be registered to submit a comment'
+            HttpResponseRedirect(reverse('blog_detail', args=[slug]))
+
         blog_form = BlogcommentForm(data=request.POST)
         if blog_form.is_valid():
             blog_comment = blog_form.save(commit=False)
@@ -63,11 +58,13 @@ def post_detail(request, slug):
             blog_comment.post = post
             blog_comment.save()
             messages.add_message(
-                request, messages.SUCCESS,'Comment submitted and awaiting approval'
+                request,
+                messages.SUCCESS,
+                'Comment submitted and awaiting approval'
                 )
 
     blog_form = BlogcommentForm()
-            
+    
     return render(
         request,
         "blog/post_detail.html",
@@ -95,17 +92,26 @@ def comment_edit(request, slug, comment_id):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         blog_comment = get_object_or_404(PostComment, pk=comment_id)
-        comment_form = BlogcommentForm(data=request.POST, instance=blog_comment)
+        comment_form = BlogcommentForm(
+            data=request.POST, instance=blog_comment)
 
         if comment_form.is_valid() and blog_comment.author == request.user:
             blog_comment = comment_form.save(commit=False)
             blog_comment.post = post
             blog_comment.approved = False
             blog_comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated and awaiting approval')
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Comment Updated and awaiting approval'
+                )
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
-    
+            messages.add_message(
+                request,
+                messages.ERROR,
+                'Error updating comment!'
+                )
+
     return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
 
 
@@ -119,23 +125,21 @@ def comment_delete(request, slug, comment_id):
     ``blog_comment``
         A single comment related to the post.
     """
-        
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     blog_comment = get_object_or_404(PostComment, pk=comment_id)
-    
+
     if blog_comment.author == request.user:
         blog_comment.delete()
         messages.add_message(
-            request, 
-            messages.SUCCESS, 
+            request,
+            messages.SUCCESS,
             "Comment deleted!"
             )
     else:
         messages.add_message(
-            request, 
-            messages.ERROR, 
+            request,
+            messages.ERROR,
             "You can only delete yout own comments!"
             )
     return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
-    
