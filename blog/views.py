@@ -47,7 +47,7 @@ def post_detail(request, slug):
 
     if request.method == "POST":
         if not request.user.is_authenticated:
-            messages.add_message.ERROR, 
+            messages.add_message.ERROR,
             'You need to be registered to submit a comment'
             HttpResponseRedirect(reverse('blog_detail', args=[slug]))
 
@@ -64,7 +64,7 @@ def post_detail(request, slug):
                 )
 
     blog_form = BlogcommentForm()
-    
+
     return render(
         request,
         "blog/post_detail.html",

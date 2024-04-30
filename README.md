@@ -403,14 +403,15 @@ A Superuser has access to review contact form submission and full control access
     * [AllAuth](https://docs.allauth.org/en/latest/) - use to provide authetication framework for project
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
 * [Heroku](https://www.heroku.com/) - Used to deploy the website
-- [Neon](https://neon.tech/) - database used within project
+- [Neon](https://neon.tech/) - Database used within project
 * [Favicon](https://favicon.io/) - Used to create favicon
 * [Font Awesome](https://fontawesome.com/) - Used to add special font images to website
 * [Bootstrap 5](https://getbootstrap.com/) - Used to add style to the displayed pages
     * [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/) - Information page used to add more UX to the pagination list
 * [ChatGPT](https://chat.openai.com/) - Used to create the test blogs, user biography and landing pages articles.
 * [WodWell](https://wodwell.com/) - Used to create the library of workouts
-* [Code Beautify](https://codebeautify.org/) - used to format HTML and CSS code
+* [Code Beautify](https://codebeautify.org/) - Used to format HTML and CSS code
+* [Clouidnary](https://cloudinary.com/) - Used to host images and integrate with django and the admin portal
 
 ## __Testing__
 ### __Validator testing__
@@ -540,8 +541,14 @@ A Superuser has access to review contact form submission and full control access
 <br>
 
 * __[CI Python Linter](https://pep8ci.herokuapp.com/)__
-    - Describe Test and Results
-    - ![CI Python Linter](./readme-assets/python-validation-test.png)
+    - All python apps passed through with success
+    <details closed>
+    <summary>Example - blog/views.py</summary>
+    <br>
+
+    ![CI Python Linter Example](/documentation/validation_images/python-linter.jpg)
+    </details>
+    
 
 
 ### __Browser Compatability__
@@ -603,11 +610,7 @@ The application has been tested using Chrome developer tools. The site remains r
 
 3. Create an unique app name, select the region and click create.
 
-3. Click on the _Settings_ tab and add the following build packs:
-    * `heroku/python`
-    * `heroku/nodejs`
-
-4. Create the following _Config Var_ called `PORT`. Set this to `8000`
+4. Create the following _Config Var_ called `SECRET_KEY`, `DATABASE_URL` and `CLOUDINARY_URL`. Set the appropriate links for these.
 
 5. Click on the _Deploy_ tab and connect with GitHub.
 
@@ -619,8 +622,7 @@ The application has been tested using Chrome developer tools. The site remains r
 
 ### __How to clone the repository__
 
-1. Go to the 
- repository on GitHub.
+1. Go to the repository on GitHub.
 
 2. Click the "Code" button to the right of the screen, click HTTPs and copy the link there.
 
@@ -628,16 +630,18 @@ The application has been tested using Chrome developer tools. The site remains r
 
 4. Change the working directory to the location where you want the clone directory.
 
-5. On the command line, type "git clone" then paste in the copied url (https://github.com/CMed01/portfolio-milestone-3) and press the Enter key to begin the clone process
+5. On the command line, type "git clone" then paste in the copied url (https://github.com/CMed01/portfolio-milestone-4) and press the Enter key to begin the clone process
 
 ## __Credits__
 
 ### __Content__
 
-* All content was written by the developer
+* All content was written by the developer, unless specified above
 
 ### __Code__
-
-* Insert any links to where code was adapted
+* [Django - Update User Profile](https://dev.to/earthcomfy/django-update-user-profile-33ho)
+    - Parts of this work through project was used to create functionaility for the profile page to be edited.
 
 ### __Acknowledegements__
+
+I would like to express my gratitude to my mentor Brian Macharia, for his guidance, support and encouragement throughout my second project. I would also like to thank Joshua from the Code Institute support team for helping me solve a rather frustrating bug when deploying my project to Heroku.
