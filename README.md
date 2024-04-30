@@ -5,11 +5,11 @@
 ![The Ox Box](documentation/doc_images/the-ox-box-grey.jpg)
 ### __Demo__
 
-The live site can be viewed here - ["INSERT TITLE HERE"]()
+The live site can be viewed here - [The Ox Box](https://the-ox-box-503ef56669e5.herokuapp.com/)
 
 Github repository can be viewed here - [CMed01/portfolio-milestone-4](https://github.com/CMed01/portfolio-milestone-4/)
 
-![Am I Responsive](./readme-assets/am-i-responsive.png)
+![Am I Responsive](/documentation/doc_images/am-i-responsive.jpg)
 
 
 ## Table of Contents
@@ -24,6 +24,9 @@ Github repository can be viewed here - [CMed01/portfolio-milestone-4](https://gi
 The Ox Box Project is designed to create a vibrant online community focused on holistic health and wellness. Users can review insightful blog content and register an account opening further opportunities to read, view and comment on both exercise routines and blog posts, fostering interaction and knowledge-sharing. Additionally, all users can directly reach out via a contact form, enabling individuals to seek personalised health advice from the owner. With dedicated sections for daily exercise workouts and a health and lifestyle blog, our website aims to empower users to embark on their journey towards a healthier and more fulfilling lifestyle.
 
 ### __User Stories__
+
+[View the Kanban Board here](https://github.com/users/CMed01/projects/3)
+
 - US01: Navigate the site
     - As a Site User I can view the landing page so that I can determine the purpose of the application
         - Acceptance criteria
@@ -110,6 +113,11 @@ The Ox Box Project is designed to create a vibrant online community focused on h
     - As a super admin, I have full control and access to all content.
         - Acceptance criteria
             - I have superuser access for all features of the website.
+
+- US15: Profile page
+    - As a registered user, I can access my profile page and write a short biography
+        - Acceptance criteria
+            - I can view and edit details on my profile page
 
 ### __Features__
 
@@ -474,7 +482,7 @@ The application has been tested using Chrome developer tools. The site remains r
 
 ### __Test Cases and Results__
 
-<details open>
+<details closed>
 <summary>The below table details the test cases that were used. </summary>
 <br>
 
@@ -493,7 +501,8 @@ The application has been tested using Chrome developer tools. The site remains r
 | TS11        | US11: Manage blog content                                | Ensure that all staff members can create, review, and delete blog content and approve submitted comments. Also, validate that the admin has access to a backend dashboard where new blog content can be added and pending comments can be reviewed and approved or rejected.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Pass    |
 | TS12        | US12: Manage workout content                             | Validate that all staff members can create, review, and delete workout content and approve submitted comments. Ensure that the admin can view and modify workout content and comment on blog articles and workouts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Pass    |
 | TS13        | US13: Review contact form submissions                    | In addition to the staff member functions, validate that only superusers can access and review contact form submissions with full control and access.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Pass    |
-| TS14        | \- US14: Control access for all users                    | Validate that only the superuser has full control and access to all content with superuser access for all features of the website.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Pass    |
+| TS14        | US14: Control access for all users                       | Validate that only the superuser has full control and access to all content with superuser access for all features of the website.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Pass    |
+| TS15        | US15 - Profile page                                      | Validate that registered users can access thir profile and edit their biography                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Pass    |
 
 </details>
 

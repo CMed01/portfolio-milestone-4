@@ -80,7 +80,7 @@ a {
 
 /* images */
 .hero-image {
-  background-image: url("/static/images/hero-image3.jpg");
+  background-image: url("/static/images/hero-image3.jpeg");
   background-size: contain;
   color: white;
 }

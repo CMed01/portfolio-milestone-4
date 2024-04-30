@@ -8,7 +8,7 @@
     <div class="row mx-2">
         <div class="col-md-10 offset-md-1">
             {% if "placeholder" in post.featured_image.url %}
-            <img class="scale" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
+            <img class="scale" src="{% static 'images/defaultimage.jpeg' %}" alt="placeholder image">
             {% else %}
             <img class="scale" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
             {% endif %}

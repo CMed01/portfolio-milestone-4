@@ -23,7 +23,7 @@ for (let button of editButtons) {
         blogCommentText.value = commentContent;
         submitButton.innerText = "Update";
         blogCommentForm.setAttribute("action", `edit_comment/${commentId}`);
-    })
+    });
 }
 
 /**
@@ -40,7 +40,7 @@ for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
         let commentId = e.target.getAttribute("comment_id");
         deleteConfirm.href = `delete_comment/${commentId}`;
-        deleteModal.show()
-    })
+        deleteModal.show();
+    });
 
 }

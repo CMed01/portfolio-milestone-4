@@ -8,7 +8,7 @@
     <div class="row mx-2">
         <div class="col-md 4">
             {% if "placeholder" in workout.featured_image.url %}
-            <img class="scale" src="{% static 'images/defaultimage.jpg' %}" 
+            <img class="scale" src="{% static 'images/defaultimage.jpeg' %}" 
                 alt="placeholder image">
             {% else %}
             <img class="scale" src=" {{ workout.featured_image.url }}" 

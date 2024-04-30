@@ -25,7 +25,7 @@
                     <div class="card-body mb-4">
                         <div class="image-container">
                             {% if "placeholder" in workout.featured_image.url %}
-                            <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpg' %}" alt="placeholder image">
+                            <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpeg' %}" alt="placeholder image">
                             {% else %}
                             <img class="card-img-top img-blog" src=" {{ workout.featured_image.url }}" alt="{{ workout.title }}">
                             {% endif %}

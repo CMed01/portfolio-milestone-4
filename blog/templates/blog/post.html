@@ -29,7 +29,7 @@
                     <div class="card-body mb-4">
                         <div class="image-container">
                             {% if "placeholder" in post.featured_image.url %}
-                            <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpg' %}" 
+                            <img class="card-img-top img-blog" src="{% static 'images/defaultimage.jpeg' %}" 
                                 alt="placeholder image">
                             {% else %}
                             <img class="card-img-top img-blog" src=" {{ post.featured_image.url }}" 

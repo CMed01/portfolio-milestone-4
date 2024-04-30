@@ -74,7 +74,7 @@
             <div class="card border-2 py-4 mx-2">
                 <div class="row justify-content-around">
                     <div class="col-md-5">
-                        <img src="{% static 'images/coach-blog2.jpg' %}" 
+                        <img src="{% static 'images/coach.jpeg' %}" 
                             alt="personal trainer coaching client" class="card-img">
                     </div>
                     <div class="col-md-6">
@@ -112,7 +112,7 @@
                             <a class="btn btn-outline-dark" href="{% url 'workout' %}">View workouts</a>
                     </div>
                     <div class="col-md-5">
-                        <img src="{% static 'images/whiteboard.jpg' %}" 
+                        <img src="{% static 'images/whiteboard.jpeg' %}" 
                             alt="discussing a workout on a whiteboard" class="card-img">
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                             <a class="btn btn-outline-dark" href="{% url 'account_signup' %}">Register</a>
                     </div>
                     <div class="col-md-5">
-                        <img src="{% static 'images/whiteboard.jpg' %}" 
+                        <img src="{% static 'images/whiteboard.jpeg' %}" 
                             alt="discussing a workout on a whiteboard" class="card-img">
                     </div>
                 </div>
@@ -160,8 +160,8 @@
                 <form id="contactForm" method="post">
                     {{ contact_form | crispy }}
                     {% csrf_token %}
-                    <a class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" 
-                        aria-label="Close">Close</a>
+                    <button class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal" 
+                        aria-label="Close">Close</button>
                     <button id="contactConfirm" type="submit" class="btn btn-outline-success btn-sm">
                         Contact
                     </button>
