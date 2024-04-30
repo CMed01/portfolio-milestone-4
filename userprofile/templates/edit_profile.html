@@ -16,7 +16,7 @@
                 {{ profile_form | crispy | safe }}
                 {% csrf_token %}
                 <div class="row">
-                    <div class="col-md 2 offset-md-10 pb-2">
+                    <div class="col-md-4 offset-md-8 pb-2">
                         <a href="{% url 'profile' %}" class="btn btn-outline-danger btn-sm">Cancel</a>
                         <button id="submitButton" type="submit" 
                         class="btn btn-outline-success btn-sm">Submit</button>
