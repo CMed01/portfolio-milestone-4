@@ -505,6 +505,7 @@ A Superuser has access to review contact form submission and full control access
 
 * __Lighthouse testing using Google Chrome LightHouse__
     - Generally all pages score above 90% on performance accessibility and SEO.
+        - Images were resized to acheive higher scores
     - Amber warnings on best practices mainly affected by external Cloudinary API
 
     <details closed>
