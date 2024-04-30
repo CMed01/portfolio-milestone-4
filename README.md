@@ -21,7 +21,7 @@ Github repository can be viewed here - [CMed01/portfolio-milestone-4](https://gi
 
 ## __User Experience__
 
-The Ox Box Project is designed to create a vibrant online community focused on holistic health and wellness. Users can review insightful blog content and register an account opening further opportunities to read, view and comment on both exercise routines and blog posts, fostering interaction and knowledge-sharing. Additionally, all users can directly reach out via a contact form, enabling individuals to seek personalised health advice from the owner. With dedicated sections for daily exercise workouts and a health and lifestyle blog, our website aims to empower users to embark on their journey towards a healthier and more fulfilling lifestyle.
+The Ox Box Project is designed to create a vibrant online community focused on holistic health and wellness. Users can review insightful blog content and register an account, opening further opportunities to read, view and comment on both exercise routines and blog posts, fostering interaction and knowledge-sharing. Additionally, all users can directly reach out via a contact form, enabling individuals to seek personalised health advice from the owner. With dedicated sections for daily exercise workouts and a health and lifestyle blog, our website aims to empower users to embark on their journey towards a healthier and more fulfilling lifestyle.
 
 ### __User Stories__
 
@@ -44,7 +44,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
             - I can navigate to the blog section of the website.
             - I see a list of blog articles with titles and previews
 
-- US04: Reach out for personlaised services (contact form)
+- US04: Reach out for personalised services (contact form)
     -  As a user, I can use the contact form to reach out for personalised health and lifestyle advice.
         - Acceptance criteria
             - I can navigate to the contact form section of the website.
@@ -104,7 +104,7 @@ The Ox Box Project is designed to create a vibrant online community focused on h
             - I can comment on blog articles and workouts.
 
 - US13: Review contact form submissions
-    - As a super admin, I can access and review form submissions full control and access.
+    - As a super admin, I can access and review form submissions with full control and access.
         - Acceptance criteria
             - I can access all features of the website.
             - I have exclusive access to review contact form submissions.
@@ -124,11 +124,11 @@ The Ox Box Project is designed to create a vibrant online community focused on h
 #### __F01: Navbar__
 
 
-The navbar is present on all pages of th site. It is used using bootstrap's navbar styles. When the user scrolls the navabr dissappears. The navbar remains responsive and on smaller devices the navbar collapses into a toggle menu.
+The navbar is present on all pages of the site. It is used using bootstrap's navbar styles. When the user scrolls the navbar disappears. The navbar remains responsive and on smaller devices the navbar collapses into a toggle menu.
 
 The navbar contains clickable links for the user to navigate through the site.
 
-There are two navbar views with different accessibkle links depending on the status of the user.
+There are two navbar views with different accessible links depending on the status of the user.
 
 
 <details closed>
@@ -168,9 +168,9 @@ Upon arrival to the home page, the user is greeted with a hero image detailing t
 </details>
 
 
-Below the hero image, the user can read four short "about me" ariticles outlining the ambition of the owners and the purpose of the website.
+Below the hero image, the user can read four short "about me" articles outlining the ambition of the owners and the purpose of the website.
 
-There cards are editable within the admin page and the most recently updated articles (up to a maximum of 4) will be displayed, allowing the superuser cutomability for the landing page.
+There cards are editable within the admin page and the most recently updated articles (up to a maximum of 4) will be displayed, allowing the superuser customizability for the landing page.
 
 <details closed>
 <summary>About me articles</summary>
@@ -182,7 +182,7 @@ There cards are editable within the admin page and the most recently updated art
 
 #### __F03: Contact Form__
 
-After the "about me" pieces all users can view a contact me section with a button which will open up a modal containing a submittable form. The form conatins fields that can be posted to the database for review by the superusers.
+After the "about me" pieces all users can view a contact me section with a button which will open up a modal containing a submittable form. The form contains fields that can be posted to the database for review by the superusers.
 
 <details closed>
 <summary>Contact section</summary>
@@ -238,7 +238,7 @@ Django AllAuth has been used to provide all authentication process throughout th
 
 #### __F04: User Profile__
 
-Once a user has registtered and become an authorised user. A profile is automatically created for that user, where they are able to edit their profile biography. Currently only the user can view their own profile page - see future developments
+Once a user has registered and become an authorised user. A profile is automatically created for that user, where they are able to edit their profile biography. Currently only the user can view their own profile page - see future developments
 
 <details closed>
 <summary>Profile page</summary>
@@ -260,7 +260,7 @@ Once a user has registtered and become an authorised user. A profile is automati
 
 Both the blog and workout pages function in similar ways however the workout pages are only viewable to authorised users after logging in. Non-authorised users can view the blog pages including any comments.
 
-On arrival to either page, the user is greeted with an short detail of the purpose of the page followed by a list of pgainated articles with the most recently posted articles appearing first. The titles for each articles can be clicked to access the articles in more detail. Within each article there is the ability for the user to write, review and delete comments.
+On arrival to either page, the user is greeted with a short detail of the purpose of the page followed by a list of paginated articles with the most recently posted articles appearing first. The titles for each article can be clicked to access the articles in more detail. Within each article there is the ability for the user to write, review and delete comments.
 
 
 
@@ -296,7 +296,7 @@ On arrival to either page, the user is greeted with an short detail of the purpo
 
 </details>
 
-For all comments the authorised user can write, edit and delete, except for workout comments where authorised users cannot edit. Following successful comment actions, the user is redirected to the original aricle page and a message is displayed at the top of the page informing the user of the outcome of any actions.
+For all comments the authorised user can write, edit and delete, except for workout comments where authorised users cannot edit. Following successful comment actions, the user is redirected to the original article page and a message is displayed at the top of the page informing the user of the outcome of any actions.
 
 <details closed>
 <summary>Comment example</summary>
@@ -361,7 +361,7 @@ A Superuser has access to review contact form submission and full control access
     - [Wireframes](https://github.com/CMed01/portfolio-milestone-4/blob/main/documentation/wireframes/wirefranes-figma.pdf) can be accessed via this link or through the GitHub repository (documentation -> wireframes)
     
 #### __Data Models (ERD)__
-- [LucidChat](https://www.lucidchart.com/) was used to create entity relationship diagrams for the data modals used in thsi project
+- [LucidChat](https://www.lucidchart.com/) was used to create entity relationship diagrams for the data modals used in this project
     <details closed>
     <summary>Data modals</summary>
     <br>
@@ -400,7 +400,7 @@ A Superuser has access to review contact form submission and full control access
 ### __Frameworks, programs and libraries__
 
 * [Django](https://docs.djangoproject.com/en/5.0/) - Framework used to create full stack
-    * [AllAuth](https://docs.allauth.org/en/latest/) - use to provide authetication framework for project
+    * [AllAuth](https://docs.allauth.org/en/latest/) - use to provide authentication framework for project
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of the website on various screen sizes.
 * [Heroku](https://www.heroku.com/) - Used to deploy the website
 - [Neon](https://neon.tech/) - Database used within project
@@ -418,7 +418,7 @@ A Superuser has access to review contact form submission and full control access
 
 * __[W3C Markup Validation Service](https://validator.w3.org/)__
     - All pages manually tested with no major errors.
-        - Error message for all pages in releation to font awesome script which is brought on page render. 
+        - Error message for all pages in relation to font awesome script which is brought on page render. 
         - No other errors found
 
     <details closed>
@@ -505,7 +505,7 @@ A Superuser has access to review contact form submission and full control access
 
 * __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
     - Generally all pages score above 90% on performance accessibility and SEO.
-    - Amber warnings on best practices mainly affected by external Clouidnary API
+    - Amber warnings on best practices mainly affected by external Cloudinary API
 
     <details closed>
     <summary>Index page</summary>
@@ -559,7 +559,7 @@ A Superuser has access to review contact form submission and full control access
     - Safari Version 17.1 (via SauceLabs)
 
 
-### ___Responiveness
+### __Responiveness__
 
 The application has been tested using Chrome developer tools. The site remains responsive between screens of width 320px (iPhone 5) to 3200px (iMac Pro)
 
@@ -640,7 +640,7 @@ The application has been tested using Chrome developer tools. The site remains r
 
 ### __Code__
 * [Django - Update User Profile](https://dev.to/earthcomfy/django-update-user-profile-33ho)
-    - Parts of this work through project was used to create functionaility for the profile page to be edited.
+    - Parts of this work through project was used to create functionality for the profile page to be edited.
 
 ### __Acknowledegements__
 
