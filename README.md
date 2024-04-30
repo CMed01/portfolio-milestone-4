@@ -503,7 +503,7 @@ A Superuser has access to review contact form submission and full control access
 
 <br>
 
-* __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
+* __Lighthouse testing using Google Chrome LightHouse__
     - Generally all pages score above 90% on performance accessibility and SEO.
     - Amber warnings on best practices mainly affected by external Cloudinary API
 
@@ -640,7 +640,7 @@ The application has been tested using Chrome developer tools. The site remains r
 
 ### __Code__
 * [Django - Update User Profile](https://dev.to/earthcomfy/django-update-user-profile-33ho)
-    - Parts of this work through project was used to create functionality for the profile page to be edited.
+    - Parts of this work through project was used to create edit functionality on the profile page.
 
 ### __Acknowledegements__
 
