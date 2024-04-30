@@ -461,6 +461,16 @@ A Superuser has access to review contact form submission and full control access
 
 
 ### __Browser Compatability__
+* Browser testing was completed on the following browsers using [SauceLabs](https://saucelabs.com/)
+    - Chrome Version 123.0.6312.124 (Official Build) (64-bit)
+    - Firefox Version 125.0 (via SauceLabs)
+    - Edge Version 124.0.2478.67 (Official build) (64-bit)
+    - Safari Version 17.1 (via SauceLabs)
+
+
+### ___Responiveness
+
+The application has been tested using Chrome developer tools. The site remains responsive between screens of width 320px (iPhone 5) to 3200px (iMac Pro)
 
 ### __Test Cases and Results__
 
